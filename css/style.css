@@ -23,7 +23,8 @@ body {
 }
 
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
-	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
+	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px),
+	only screen and (min-width: 950px)
 {
 	body {
 		background-position-x: 0;
@@ -36,7 +37,8 @@ body {
 
 /* If we can fit the text next to my head */
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
-	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
+	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px),
+	only screen and (min-width: 950px)
  {
 	.wrapper {
 		width: 60%;
