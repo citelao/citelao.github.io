@@ -1,6 +1,41 @@
 html {
     // https://modernfontstacks.com
     font-family: Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    line-height: 1.5;
 
     max-width: 40rem;
+}
+
+body {
+    padding: 2rem;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
 }
