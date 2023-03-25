@@ -2,8 +2,8 @@
 import { getCollection } from 'astro:content';
 import { Image } from '@astrojs/image/components';
 
+import Base from "../layouts/Base.astro";
 import full_bleed from "../img/full_bleed.jpg";
-import "../css/style.scss";
 
 const allBlogPosts = await getCollection('blog');
 
@@ -12,123 +12,110 @@ function getSimpleDate(d: Date): string {
 }
 
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
+<Base title="Ben Stolovitz">
+	<style lang="scss">
+		main {
+			display: flex;
+			gap: 2rem;
+			flex-wrap: wrap;
+		}
 
-		<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed" />
+		section { 
+			max-width: 38rem;
+		}
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Ben Stolovitz</title>
+		.inline {
+			list-style: none;
+			margin: 0;
+			margin-bottom: 1rem;
+			padding: 0;
+			display: flex;
+			gap: 0.5rem;
 
-		<style lang="scss">
-			main {
-				display: flex;
-				gap: 2rem;
-				flex-wrap: wrap;
+			li {
+				display: block;
 			}
+		}
 
-			section { 
-				max-width: 38rem;
-			}
+		.buttonLink {
+			background-color: rgba(0,0,0,0.2);
+			padding: 0.2rem 0.5rem;
+			border-radius: 0.3rem;
 
-			.inline {
-				list-style: none;
-				margin: 0;
-				margin-bottom: 1rem;
-				padding: 0;
-				display: flex;
-				gap: 0.5rem;
+			text-decoration: none;
+		}
 
-				li {
-					display: block;
+		table {
+			td {
+				padding: 0 0.5rem;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
 				}
 			}
 
-			.buttonLink {
-				background-color: rgba(0,0,0,0.2);
-				padding: 0.2rem 0.5rem;
-				border-radius: 0.3rem;
-
-				text-decoration: none;
+			.date {
+				text-align: right;
 			}
+		}
+	</style>
+	<main>
+		<section>
+			<h1>Ben Stolovitz</h1>
+			<p>
+				I'm a software engineer at Microsoft working on Windows and
+				accessibility. I'm writing an <a
+				href="https://security.stolovitz.com">evidence-based guide to
+				cybersecurity</a>, helped design and teach <a
+				href="https://classes.cec.wustl.edu/~SEAS-SVC-CSE132/">a pilot CS
+				course</a> at my school, and I did <a
+				href="http://sonify.psych.gatech.edu">accessibility research</a> at
+				Georgia Tech.
+			</p>
+			<ul class="inline">
+				<li><a class="buttonLink" href="https://github.com/citelao">GitHub</a></li>
+				<li><a class="buttonLink" href="https://www.linkedin.com/in/benstolovitz/">LinkedIn</a></li>
+				<li><a class="buttonLink" href="/static/Ben Stolovitz.pdf">Resume</a></li>
+			</ul>
+			<Image width={400} quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
+			<h2>Projects</h2>
+			<ul>
+				<li>
+					<a href="https://security.stolovitz.com">Sensible Security</a> - a cybersecurity guide for normal people
+				</li>
+				<li>
+					<a href="https://morse.horse">morse.horse</a> - learn morse code from a horse
+				</li>
+				<li>
+					<a href="https://resistors.fyi">resistors.fyi</a> - simple, keyboard-first resistor calculator
+				</li>
+				<li>
+					<a href="https://ben.stolovitz.com/tar2d2/">tar2d2</a> - simple vacation tracker
+				</li>
+			</ul>
+			<h3>Archive</h3>
+			<ul>
+				<li><a href="https://ben.stolovitz.com/Spotify-for-Alfred/">Spotifious</a> - a natural Spotify controller for Alfred</li>
+				<li><a href="https://acac.wustl.edu">WUSTL ACAC</a> - website</li>
+				<li><a href="https://aristocats.wustl.edu">WUSTL Aristocats</a> - website and branding</li>
+				<li><a href="http://cse132.engineering.wustl.edu">WUSTL CSE132</a> - first head TA; wrote several projects, electricity guide in the course textbook, original website</li>
+			</ul>
+		</section>
 
-			table {
-				td {
-					padding: 0 0.5rem;
-
-					&:first-child {
-						padding-left: 0;
-					}
-
-					&:last-child {
-						padding-right: 0;
-					}
-				}
-
-				.date {
-					text-align: right;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<section>
-				<h1>Ben Stolovitz</h1>
-				<p>
-					I'm a software engineer at Microsoft working on Windows and
-					accessibility. I'm writing an <a
-					href="https://security.stolovitz.com">evidence-based guide to
-					cybersecurity</a>, helped design and teach <a
-					href="https://classes.cec.wustl.edu/~SEAS-SVC-CSE132/">a pilot CS
-					course</a> at my school, and I did <a
-					href="http://sonify.psych.gatech.edu">accessibility research</a> at
-					Georgia Tech.
-				</p>
-				<ul class="inline">
-					<li><a class="buttonLink" href="https://github.com/citelao">GitHub</a></li>
-					<li><a class="buttonLink" href="https://www.linkedin.com/in/benstolovitz/">LinkedIn</a></li>
-					<li><a class="buttonLink" href="/static/Ben Stolovitz.pdf">Resume</a></li>
-				</ul>
-				<Image width={400} quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
-				<h2>Projects</h2>
-				<ul>
-					<li>
-						<a href="https://security.stolovitz.com">Sensible Security</a> - a cybersecurity guide for normal people
-					</li>
-					<li>
-						<a href="https://morse.horse">morse.horse</a> - learn morse code from a horse
-					</li>
-					<li>
-						<a href="https://resistors.fyi">resistors.fyi</a> - simple, keyboard-first resistor calculator
-					</li>
-					<li>
-						<a href="https://ben.stolovitz.com/tar2d2/">tar2d2</a> - simple vacation tracker
-					</li>
-				</ul>
-				<h3>Archive</h3>
-				<ul>
-					<li><a href="https://ben.stolovitz.com/Spotify-for-Alfred/">Spotifious</a> - a natural Spotify controller for Alfred</li>
-					<li><a href="https://acac.wustl.edu">WUSTL ACAC</a> - website</li>
-					<li><a href="https://aristocats.wustl.edu">WUSTL Aristocats</a> - website and branding</li>
-					<li><a href="http://cse132.engineering.wustl.edu">WUSTL CSE132</a> - first head TA; wrote several projects, electricity guide in the course textbook, original website</li>
-				</ul>
-			</section>
-	
-			<section>
-				<h2>Blog</h2>
-				<table>
-					{allBlogPosts.map((post) => {
-						return <tr>
-							<td class="date">{getSimpleDate(post.data.publishDate)}</td>
-							<td><a href={`/posts/${post.slug}`}>{post.data.title}</a></td>
-						</tr>;
-					})}
-				</table>
-			</section>
-		</main>
-	</body>
-</html>
+		<section>
+			<h2>Blog</h2>
+			<table>
+				{allBlogPosts.map((post) => {
+					return <tr>
+						<td class="date">{getSimpleDate(post.data.publishDate)}</td>
+						<td><a href={`/posts/${post.slug}`}>{post.data.title}</a></td>
+					</tr>;
+				})}
+			</table>
+		</section>
+	</main>
+</Base>
