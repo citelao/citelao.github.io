@@ -10,7 +10,9 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@agney/playground": "^0.8.1",
 		"@astrojs/image": "^0.16.2",
+		"@astrojs/mdx": "^0.18.2",
 		"astro": "^2.1.7"
 	},
 	"devDependencies": {
