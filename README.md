@@ -10,6 +10,18 @@ npm run dev
 npx astro sync
 ```
 
+## Inspiration
+
+* https://news.ycombinator.com/item?id=34867314
+* https://molodtsov.me/2023/02/how-to-start-your-blog-in-2023/
+* https://jvns.ca/blog/2016/09/19/getting-things-done/
+* https://danluu.com
+* https://devblogs.microsoft.com/oldnewthing/
+* https://www.joshwcomeau.com
+* https://matthewbutterick.com/chron/
+* https://montaigne.io
+* https://lapcatsoftware.com/articles/
+
 ---
 
 ## 🚀 Project Structure
