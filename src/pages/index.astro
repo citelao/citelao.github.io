@@ -1,12 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
 import { Image } from '@astrojs/image/components';
 
 import full_bleed from "../img/full_bleed.jpg";
 import "../css/style.scss";
+
+const allBlogPosts = await getCollection('blog');
+
+function getSimpleDate(d: Date): string {
+	return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+}
+
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+
+		<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -79,5 +90,15 @@ import "../css/style.scss";
 			<li><a href="https://aristocats.wustl.edu">WUSTL Aristocats</a> - website and branding</li>
 			<li><a href="http://cse132.engineering.wustl.edu">WUSTL CSE132</a> - first head TA; wrote several projects, electricity guide in the course textbook, original website</li>
 		</ul>
+
+		<h2>Blog</h2>
+		<table>
+			{allBlogPosts.map((post) => {
+				return <tr>
+					<td>{getSimpleDate(post.data.publishDate)}</td>
+					<td><a href={`/posts/${post.slug}`}>{post.data.title}</a></td>
+				</tr>;
+			})}
+		</table>
 	</body>
 </html>

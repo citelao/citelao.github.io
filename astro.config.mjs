@@ -4,5 +4,6 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ben.stolovitz.com",
   integrations: [image()]
 });
