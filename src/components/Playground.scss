@@ -1,0 +1,29 @@
+figure {
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+figure .label {
+    margin: 1rem 0 0;
+}
+
+textarea {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 0.2rem;
+    width: 100%;
+    
+    // https://modernfontstacks.com
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+.output {
+    background-color: rgba(0,0,0,0.1);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+}

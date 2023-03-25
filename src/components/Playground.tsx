@@ -1,12 +1,32 @@
-import { default as Pg } from "@agney/playground";
-/* Why is there a tabs import? https://github.com/agneym/playground#why-is-there-a-reacttabs-import*/
-import "@reach/tabs/styles.css";
+import { createRef, useState } from "react";
+import "./Playground.scss";
 
-type PlaygroundProps = {
+type Props = {
     html: string;
 };
-export default function Playground({ html }: PlaygroundProps) {
+export default function Playground({ html }: Props) {
+    const initialRows = html.split("\n").length;
+    const [currentHtml, setCurrentHtml] = useState(html);
+
+    const htmlText = createRef<HTMLTextAreaElement>();
+
+    const handleHtmlChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setCurrentHtml(e.target.value);
+
+        // TODO: don't change this if folks manually resize.
+        // e.target.style.height = e.target.scrollHeight + 'px';
+    };
+
     return (
-        <Pg initialSnippet={{ html }} mode={"light"} />
+        <figure>
+            <div className="label" id="exampleLabel">Example</div>
+            {/* TODO: IFrame */}
+            <div className="output" dangerouslySetInnerHTML={{__html: currentHtml}} />
+
+            <div className="label" id="htmlLabel">HTML</div>
+            <textarea ref={htmlText} rows={initialRows} onChange={handleHtmlChange}>
+                {currentHtml}
+            </textarea>
+        </figure>
     );
 }
