@@ -21,6 +21,7 @@ npx astro sync
 * https://matthewbutterick.com/chron/
 * https://montaigne.io
 * https://lapcatsoftware.com/articles/
+* https://thrice.me
 
 ---
 
