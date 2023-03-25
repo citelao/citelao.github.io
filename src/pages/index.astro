@@ -1,4 +1,7 @@
 ---
+import { Image } from '@astrojs/image/components';
+
+import full_bleed from "../img/full_bleed.jpg";
 ---
 
 <html lang="en">
@@ -15,6 +18,8 @@
 			I'm a software engineer at Microsoft
 			working on Windows.
 		</p>
+
+		<Image width={400} quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
 
 		<h2>Projects</h2>
 		<ul>
