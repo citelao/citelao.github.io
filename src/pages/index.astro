@@ -4,7 +4,6 @@ import { Image } from '@astrojs/image/components';
 import full_bleed from "../img/full_bleed.jpg";
 import "../css/style.scss";
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -12,6 +11,29 @@ import "../css/style.scss";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ben Stolovitz</title>
+
+		<style>
+			.inline {
+				list-style: none;
+				margin: 0;
+				margin-bottom: 1rem;
+				padding: 0;
+				display: flex;
+				gap: 0.5rem;
+
+				li {
+					display: block;
+				}
+			}
+
+			.buttonLink {
+				background-color: rgba(0,0,0,0.2);
+				padding: 0.2rem 0.5rem;
+				border-radius: 0.3rem;
+
+				text-decoration: none;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Ben Stolovitz</h1>
@@ -25,6 +47,12 @@ import "../css/style.scss";
 			href="http://sonify.psych.gatech.edu">accessibility research</a> at
 			Georgia Tech.
 		</p>
+
+		<ul class="inline">
+			<li><a class="buttonLink" href="https://github.com/citelao">GitHub</a></li>
+			<li><a class="buttonLink" href="https://www.linkedin.com/in/benstolovitz/">LinkedIn</a></li>
+			<li><a class="buttonLink" href="/static/Ben Stolovitz.pdf">Resume</a></li>
+		</ul>
 
 		<Image width={400} quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
 
@@ -46,13 +74,6 @@ import "../css/style.scss";
 			<li><a href="https://acac.wustl.edu">WUSTL ACAC</a> - website</li>
 			<li><a href="https://aristocats.wustl.edu">WUSTL Aristocats</a> - website and branding</li>
 			<li><a href="http://cse132.engineering.wustl.edu">WUSTL CSE132</a> - first head TA; wrote several projects, electricity guide in the course textbook, original website</li>
-		</ul>
-
-		<h2>See also</h2>
-		<ul>
-			<li><a href="https://github.com/citelao">GitHub</a></li>
-			<li><a href="https://www.linkedin.com/in/benstolovitz/">LinkedIn</a></li>
-			<li><a href="/static/Ben Stolovitz.pdf">Resume</a></li>
 		</ul>
 	</body>
 </html>
