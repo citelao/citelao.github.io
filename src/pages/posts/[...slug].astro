@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<Base title={`test`}>
+<Base title={`${entry.data.title} - Ben Stolovitz`}>
     <style lang="scss">
         body {
             display: flex;
