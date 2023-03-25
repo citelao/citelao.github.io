@@ -23,10 +23,12 @@ export default function Playground({ html }: Props) {
             {/* TODO: IFrame */}
             <div className="output" dangerouslySetInnerHTML={{__html: currentHtml}} />
 
-            <div className="label" id="htmlLabel">HTML</div>
-            <textarea ref={htmlText} rows={initialRows} onChange={handleHtmlChange}>
-                {currentHtml}
-            </textarea>
+            <details>
+                <summary className="label" id="htmlLabel">HTML</summary>
+                <textarea ref={htmlText} rows={initialRows} onChange={handleHtmlChange}>
+                    {currentHtml}
+                </textarea>
+            </details>
         </figure>
     );
 }

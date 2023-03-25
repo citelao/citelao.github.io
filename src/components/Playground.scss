@@ -1,10 +1,9 @@
 figure {
     margin: 0.5rem 0;
-    padding: 0;
-}
+    padding: 0.5rem;
 
-figure .label {
-    margin: 1rem 0 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 0.2rem;
 }
 
 textarea {
@@ -23,7 +22,12 @@ textarea {
 }
 
 .label {
+    margin: 0;
     font-size: 0.8rem;
     text-transform: uppercase;
     color: rgba(0,0,0,0.6);
+}
+
+details {
+    margin-top: 0.5rem;
 }

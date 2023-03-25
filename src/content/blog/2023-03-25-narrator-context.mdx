@@ -13,10 +13,37 @@ Well, if you're a visual user:
 * You probably read the article title
 * You can glance at the URL bar to get 
 
-<Playground client:load html={`<h1>Assignments</h1>
+<Playground client:load html={`<table>
+    <caption>Assignments</caption>
+    <tbody>
+        <tr>
+            <th scope="row">Learning Algebra - Chp. 3
+            </th>
+            <td>
+                <button>Grade</button>
+                <button>Remind</button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">World History - Chp. 12
+            </th>
+            <td>
+                <button>Grade</button>
+                <button>Remind</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h1>Pending assignments</h1>
 <ol>
     <li>
-        All Things Great and Small - book report
+        All Creatures Great and Small - book report
+        <button>Publish</button>
+        <button>Edit</button>
+        <button>Delete</button>
+    </li>
+    <li>
+        Another report
         <button>Publish</button>
         <button>Edit</button>
         <button>Delete</button>
