@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from '@astrojs/image/components';
+import { Picture } from '@astrojs/image/components';
 
 import Base from "../layouts/Base.astro";
 import full_bleed from "../img/full_bleed.jpg";
@@ -81,7 +81,7 @@ function getSimpleDate(d: Date): string {
 				<li><a class="buttonLink" href="https://www.linkedin.com/in/benstolovitz/">LinkedIn</a></li>
 				<li><a class="buttonLink" href="/static/Ben Stolovitz.pdf">Resume</a></li>
 			</ul>
-			<Image width={400} quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
+			<Picture widths={[200, 400]} sizes="(max-width: 400px) 80vw, 400px" quality={90} src={full_bleed} alt="Photo of Ben Stolovitz" />
 			<h2>Projects</h2>
 			<ul>
 				<li>
