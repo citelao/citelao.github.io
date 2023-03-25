@@ -5,9 +5,11 @@ import Base from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
+  return blogEntries
+    .filter(entry => entry.data.published)
+    .map(entry => ({
+        params: { slug: entry.slug }, props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
@@ -26,7 +28,9 @@ const { Content } = await entry.render();
         }
     </style>
 
-    <a href="/">&larr; back home</a>
+    <p>
+        <a href="/">&larr; back home</a>
+    </p>
 
     <main>
         <h1>{entry.data.title}</h1>

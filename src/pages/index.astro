@@ -8,7 +8,7 @@ import full_bleed from "../img/full_bleed.jpg";
 const allBlogPosts = await getCollection('blog');
 
 function getSimpleDate(d: Date): string {
-	return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+	return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() + 1}`;
 }
 
 ---
@@ -109,7 +109,7 @@ function getSimpleDate(d: Date): string {
 		<section>
 			<h2>Blog</h2>
 			<table>
-				{allBlogPosts.map((post) => {
+				{allBlogPosts.filter(entry => entry.data.published).reverse().map((post) => {
 					return <tr>
 						<td class="date">{getSimpleDate(post.data.publishDate)}</td>
 						<td><a href={`/posts/${post.slug}`}>{post.data.title}</a></td>
