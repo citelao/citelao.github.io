@@ -9,3 +9,12 @@ td, th {
 tbody tr:nth-child(2n + 1) {
     background-color: rgba(0,0,0,0.03);
 }
+
+.rate {
+    text-align: right;
+}
+
+[title] {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}

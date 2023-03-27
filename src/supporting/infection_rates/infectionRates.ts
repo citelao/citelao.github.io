@@ -6,7 +6,7 @@ export const rawData = [
     { startDate: "11/1/19", endDate: "10/31/20", encounterRate: .1018, group: "Kaspersky" },
     { startDate: "11/1/18", endDate: "10/31/19", encounterRate: .1980, group: "Kaspersky" },
     { startDate: "11/1/17", endDate: "10/31/18", encounterRate: .3001, group: "Kaspersky" },
-    { startDate: "1/1/18", endDate: "12/31/18", encounterRate: .0510, group: "Microsoft" },
+    { startDate: "1/1/18", endDate: "12/31/18", encounterRate: .0510, group: "Microsoft", notes: "Average monthly rate; not a cumulative annual number." },
     { startDate: "11/1/16", endDate: "10/31/17", encounterRate: .2940, group: "Kaspersky" },
     { startDate: "12/1/17", endDate: "12/31/17", encounterRate: .180, group: "Microsoft" },
     { startDate: "11/1/17", endDate: "11/30/17", encounterRate: .190, group: "Microsoft" },
@@ -17,11 +17,12 @@ export const rawData = [
     { startDate: "3/1/17", endDate: "3/31/17", encounterRate: .070, group: "Microsoft" },
     { startDate: "2/1/17", endDate: "2/28/17", encounterRate: .090, group: "Microsoft" },
     { startDate: "1/1/17", endDate: "1/31/17", encounterRate: .1030, group: "Microsoft" },
+    { startDate: "11/1/15", endDate: "10/31/16", encounterRate: .319, group: "Kaspersky" },
     { startDate: "4/1/16", endDate: "6/30/16", encounterRate: .2120, group: "Microsoft" },
     { startDate: "1/1/16", endDate: "3/31/16", encounterRate: .3332, group: "Panda Labs" },
     { startDate: "1/1/16", endDate: "3/31/16", encounterRate: .1830, group: "Microsoft" },
-    { startDate: "1/1/15", endDate: "3/31/15", encounterRate: .3213, group: "Panda Labs" },
-    { startDate: "1/1/15", endDate: "3/31/15", encounterRate: .1790, group: "Microsoft" },
+    { startDate: "1/1/15", endDate: "12/31/15", encounterRate: .3213, group: "Panda Labs" },
+    { startDate: "1/1/15", endDate: "12/31/15", encounterRate: .1790, group: "Microsoft" },
     { startDate: "10/1/15", endDate: "12/31/15", encounterRate: .2080, group: "Microsoft" },
     { startDate: "7/1/15", endDate: "9/30/15", encounterRate: .3212, group: "Panda Labs" },
     { startDate: "7/1/15", endDate: "9/30/15", encounterRate: .1780, group: "Microsoft" },
@@ -47,6 +48,7 @@ const data = rawData.map((d) => {
         endDate: timeFormatter(d.endDate) || new Date(0),
         encounterRate: d.encounterRate,
         group: d.group,
+        notes: d.notes,
     }
 });
 
