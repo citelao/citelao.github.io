@@ -6,5 +6,5 @@ export function leftpad(s: string, n: number, char: string = " "): string {
 }
 
 export function shortDate(d: Date): string {
-    return `${d.getFullYear()}/${leftpad((d.getMonth() + 1).toString(), 2, "0")}/${leftpad((d.getDate() + 1).toString(), 2, "0")}`;
+    return `${d.getFullYear()}/${leftpad((d.getMonth() + 1).toString(), 2, "0")}/${leftpad((d.getDate()).toString(), 2, "0")}`;
 }
