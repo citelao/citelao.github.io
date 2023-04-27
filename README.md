@@ -10,6 +10,13 @@ npm run dev
 npx astro sync
 ```
 
+## Deploy
+
+```
+# Just push main. GitHub will build & deploy.
+git push
+```
+
 ## Inspiration
 
 * https://news.ycombinator.com/item?id=34867314

@@ -11,6 +11,17 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN0HVXBFN4"></script>
+		<script>
+		// @ts-nocheck
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-ZN0HVXBFN4');
+		</script>
+
 		<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed" />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
