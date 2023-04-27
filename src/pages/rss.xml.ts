@@ -10,11 +10,13 @@ export async function get(context: APIContext) {
     title: "Ben Stolovitz's blog",
     description: 'Yet another blog',
     site: context.site?.toString(),
-    items: allBlogPosts.map((p) => ({
-      title: p.data.title,
-      pubDate: p.data.publishDate,
-      link: `/posts/${p.slug}/`
-    })),
+    items: allBlogPosts
+      .filter((p) => p.data.published)
+      .map((p) => ({
+        title: p.data.title,
+        pubDate: p.data.publishDate,
+        link: `/posts/${p.slug}/`
+      })),
     // (optional) inject custom xml
     customData: `<language>en-us</language>`,
   });
