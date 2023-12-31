@@ -1,0 +1,4 @@
+# https://community.cloudflare.com/t/add-x-robots-tag-noindex-to-deafult-pages-dev-subdomain-for-hugo-website/337232/3
+# https://developers.cloudflare.com/pages/platform/headers#prevent-your-pagesdev-deployments-showing-in-search-results
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
