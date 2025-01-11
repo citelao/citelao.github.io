@@ -1,4 +1,4 @@
-import{j as q}from"./jsx-runtime.7d759e48.js";import{r as R,c as V,g as st,R as pe}from"./index.8365acb2.js";/* empty css                                    */import{s as oe}from"./Playground_module.be6a38b5.9b82928e.js";/* empty css                      */function it(t,{markup:r,hiddenCss:e,css:l,javascript:g},S,w,u){function d(){return w?`
+import{j as q}from"./jsx-runtime.7d759e48.js";import{r as R,c as V,g as st,R as pe}from"./index.8365acb2.js";/* empty css                                    */import{s as oe}from"./Playground_module.5ff23554.9b82928e.js";/* empty css                      */function it(t,{markup:r,hiddenCss:e,css:l,javascript:g},S,w,u){function d(){return w?`
         <script type="module">
           const BareIdentifierFormat = /^((?:@[^\\/]+\\/)?[^\\/]+)(\\/.*)?$/
 
