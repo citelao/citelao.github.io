@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime.391947bd.js";import"./index.ed373d49.js";function n(){return t.jsxs("div",{children:[t.jsx("button",{children:"Test"}),t.jsx("button",{children:"Test"}),t.jsx("button",{children:"Test"}),t.jsx("button",{children:"Test"})]})}export{n as default};
