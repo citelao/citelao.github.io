@@ -1,17 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN0HVXBFN4"></script><script>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN0HVXBFN4"></script><script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		
 		gtag('config', 'G-ZN0HVXBFN4');
-	</script><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v3.3.1"><title>(Don&#39;t) make Narrator read things - Ben Stolovitz</title><meta name="description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><link rel="canonical" href="https://ben.stolovitz.com/posts/make-narrator-read/"><meta property="og:url" content="https://ben.stolovitz.com/posts/make-narrator-read/"><meta property="og:type" content="article"><meta property="og:title" content="(Don't) make Narrator read things"><meta property="og:description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><meta property="og:sitename" content="ben.stolovitz.com"><meta property="og:image" content="/_astro/make-narrator-read-og.60b748c0_obNe1.png"><meta property="og:image:alt" content="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="article:published_time" content="2025-02-05T00:00:00.000Z"><meta property="article:author" content="Ben Stolovitz"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="ben.stolovitz.com"><meta property="twitter:url" content="https://ben.stolovitz.com/posts/make-narrator-read/"><meta name="twitter:title" content="(Don't) make Narrator read things"><meta name="twitter:description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><meta name="twitter:image" content="/_astro/make-narrator-read-og.60b748c0_obNe1.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_path_.fb8991db.css" />
+	</script><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v5.5.5"><title>(Don&#39;t) make Narrator read things - Ben Stolovitz</title><meta name="description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><link rel="canonical" href="https://ben.stolovitz.com/posts/make-narrator-read/"><meta property="og:url" content="https://ben.stolovitz.com/posts/make-narrator-read/"><meta property="og:type" content="article"><meta property="og:title" content="(Don't) make Narrator read things"><meta property="og:description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><meta property="og:sitename" content="ben.stolovitz.com"><meta property="og:image" content="/_astro/make-narrator-read-og.3FjYw8gd_Z1Wr8h4.png"><meta property="og:image:alt" content="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="article:published_time" content="2025-02-05T00:00:00.000Z"><meta property="article:author" content="Ben Stolovitz"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="ben.stolovitz.com"><meta property="twitter:url" content="https://ben.stolovitz.com/posts/make-narrator-read/"><meta name="twitter:title" content="(Don't) make Narrator read things"><meta name="twitter:description" content="You can force screen readers to announce things, but you probably shouldn't. Here's why."><meta name="twitter:image" content="/_astro/make-narrator-read-og.3FjYw8gd_Z1Wr8h4.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_path_.f-XW_7oS.css">
 <style>@charset "UTF-8";.article aside{background-color:var(--aside-background);padding:.5rem 1rem;margin-left:2rem;font-size:.9rem;border-radius:var(--big-corner)}@media print{.article aside{border:1px solid var(--chart-tick-foreground);background-color:transparent}}.article aside p:first-child,.article aside h1:first-child,.article aside h2:first-child,.article aside h3:first-child,.article aside h4:first-child,.article aside h5:first-child{margin-top:0}.article aside p:last-child{margin-bottom:0}.article .appendix{background-color:var(--aside-background);padding:.5rem 1rem;font-size:.9rem;border-radius:var(--big-corner)}@media print{.article .appendix{border:1px solid var(--chart-tick-foreground);background-color:transparent}}.article .appendix+.appendix{margin-top:1rem}.article .appendix h1,.article .appendix h2,.article .appendix h3,.article .appendix h4,.article .appendix h5{margin-top:.5rem}.article button{appearance:none;padding:.5rem;border-radius:1rem;background:var(--table-alternate-background);color:inherit;border:0;cursor:pointer}.article button:hover,.article button:focus{background:var(--link);color:var(--background)}.article blockquote{margin:0;margin-left:1.5rem}.article blockquote .source{display:block;text-align:right;margin-right:1rem;font-size:.8rem;clear:both;color:var(--code-foreground)}.article blockquote .source:before{content:"— "}.article .image_figure{margin:0 auto;text-align:center;font-size:.8rem;max-width:80%}@media print{.article .image_figure{max-width:50%}}.article .image_figure p{margin:0}.article .image_figure figcaption{color:var(--code-foreground)}.article .image_figure img{border-radius:var(--big-corner)}.article .deemphasized{color:var(--code-foreground)}.article table td,.article table th{padding:.2rem}.article table tr:nth-child(2n){background:var(--table-alternate-background)}.article .key_image{margin:0 auto;max-width:100%}.article img{max-width:90%;height:auto}body{display:flex;gap:2rem;flex-wrap:wrap}main[data-astro-cid-egg7nqdx]{max-width:38rem;width:100%}aside[data-astro-cid-egg7nqdx]{font-size:.8rem;text-align:center}.bottom_nav[data-astro-cid-egg7nqdx]{display:flex;margin-bottom:1rem;justify-content:space-between;gap:1rem}.bottom_nav[data-astro-cid-egg7nqdx] .prev[data-astro-cid-egg7nqdx]{grid-column:prev/span 1}.bottom_nav[data-astro-cid-egg7nqdx] .next[data-astro-cid-egg7nqdx]{grid-column:next/span 1}@media print{.bottom_nav[data-astro-cid-egg7nqdx]{display:none}}h1[data-astro-cid-egg7nqdx]{font-size:1.4rem}nav[data-astro-cid-egg7nqdx]{margin-top:1.5rem}@media print{nav[data-astro-cid-egg7nqdx]{display:none}}
-._volumeSimulator_2iv9s_1{text-align:center;background-color:var(--aside-background);padding:1rem;border-radius:var(--big-corner);position:relative;display:flex;gap:1rem;flex-direction:column}@media print{._volumeSimulator_2iv9s_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._volumeStatus_2iv9s_18{display:grid;grid-template-columns:1fr [output] max-content [sound] 1fr}._playing_2iv9s_23{grid-column:sound;text-align:right}._volumeOutput_2iv9s_28{background:var(--gruv-bg);color:var(--gruv-fg);border-radius:var(--small-corner);padding:.2rem .5rem;margin:0;grid-column:output;text-align:left;min-width:12rem}._volumeOutput_2iv9s_28 span{overflow:hidden}@media print{._volumeOutput_2iv9s_28{background:transparent;color:var(--foreground)}}._placeholder_2iv9s_48{opacity:.5}._volumeButton_2iv9s_52._volumeButton_2iv9s_52{padding:2rem;border-radius:var(--small-corner);background-color:var(--table-alternate-background);font-size:2rem;line-height:.5;border:.1rem solid var(--kbd-border);border-bottom-width:.4rem;cursor:pointer}@media print{._volumeButton_2iv9s_52._volumeButton_2iv9s_52{background:transparent;color:var(--foreground)}}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:hover,._volumeButton_2iv9s_52._volumeButton_2iv9s_52:focus{margin-top:.3rem;border-bottom-width:.1rem}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:active{background-color:var(--link)}._buttonGroup_2iv9s_76{display:flex;justify-content:center;gap:.2rem}._volumeOptions_2iv9s_82{display:flex;flex-direction:column;justify-content:center;align-items:center}
 @keyframes _slideInFromLeft_1hpfe_1{0%{opacity:0}to{opacity:1}}._themeButton_1hpfe_9{appearance:none;padding:.5rem;border-radius:1rem;background:var(--table-alternate-background);border:0;cursor:pointer;position:fixed;top:1.3rem;right:1rem;animation:.3s ease-out 0s 1 _slideInFromLeft_1hpfe_1}._themeButton_1hpfe_9:hover,._themeButton_1hpfe_9:focus{background:var(--link);color:var(--background)}@media print{._themeButton_1hpfe_9{display:none}}
-code[class*=language-],pre[class*=language-]{color:#ebdbb2;font-family:Consolas,Monaco,Andale Mono,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{color:#fbf1c7;background:#7c6f64}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{color:#fbf1c7;background:#7c6f64}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#1d2021}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.cdata{color:#a89984}.token.delimiter,.token.boolean,.token.keyword,.token.selector,.token.important,.token.atrule{color:#fb4934}.token.operator,.token.punctuation,.token.attr-name{color:#a89984}.token.tag,.token.tag .punctuation,.token.doctype,.token.builtin{color:#fabd2f}.token.entity,.token.number,.token.symbol{color:#d3869b}.token.property,.token.constant,.token.variable{color:#fb4934}.token.string,.token.char{color:#b8bb26}.token.attr-value,.token.attr-value .punctuation{color:#a89984}.token.url{color:#b8bb26;text-decoration:underline}.token.function{color:#fabd2f}.token.regex{background:#b8bb26}.token.bold{font-weight:700}.token.italic{font-style:italic}.token.inserted{background:#a89984}.token.deleted{background:#fb4934}._playground_1izfv_1{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch;margin:0;background-color:var(--aside-background);padding:.5rem;border-radius:var(--big-corner)}@media print{._playground_1izfv_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._editorTabs_1izfv_18,._frame_1izfv_19{flex:3;min-width:20rem;max-width:100%;min-height:15rem}._editorTabs_1izfv_18{flex:4}._tabsSection_1izfv_30{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between}._title_1izfv_37{vertical-align:middle}._editor_1izfv_18{border-radius:var(--small-corner);font-family:monospace;background-color:#1d2021}._frame_1izfv_19{position:relative}._iframe_1izfv_51{border-radius:var(--small-corner);height:100%}._error_1izfv_56{position:absolute;bottom:0;right:0;left:0;background-color:#fb4934;padding:.2rem}._error_1izfv_56 p{margin:0}.react-tabs{-webkit-tap-highlight-color:transparent}.react-tabs__tab-list{margin:0;padding:0}.react-tabs__tab{display:inline-block;border-bottom:none;bottom:-1px;position:relative;list-style:none;padding:.2rem 1rem;min-width:5rem;text-align:center;cursor:pointer}.react-tabs__tab:hover{background-color:var(--table-alternate-background);border-radius:5px 5px 0 0}.react-tabs__tab--selected{background:var(--gruv-bg);border-color:var(--tab-border-color);color:var(--foreground);border-radius:5px 5px 0 0}.react-tabs__tab--selected:hover{background-color:var(--background)}.react-tabs__tab--disabled{color:var(--code-foreground);cursor:default}.react-tabs__tab:focus{outline:none;background-color:var(--link)}.react-tabs__tab:focus:after{content:"";position:absolute;height:5px;left:-4px;right:-4px;bottom:-5px;background-color:transparent}.react-tabs__tab-panel{display:none}.react-tabs__tab-panel--selected{display:block}
-</style><script type="module">
-</script><style>.wrapper[data-astro-cid-tb5vpudz]{width:100%;padding:.5rem 0;margin:1em 0}@media screen and (min-width: 40rem){.wrapper[data-astro-cid-tb5vpudz]{width:150%;max-width:90vw;padding-right:1rem}}
-</style></head><body><script>
+._volumeSimulator_2iv9s_1{text-align:center;background-color:var(--aside-background);padding:1rem;border-radius:var(--big-corner);position:relative;display:flex;gap:1rem;flex-direction:column}@media print{._volumeSimulator_2iv9s_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._volumeStatus_2iv9s_18{display:grid;grid-template-columns:1fr [output] max-content [sound] 1fr}._playing_2iv9s_23{grid-column:sound;text-align:right}._volumeOutput_2iv9s_28{background:var(--gruv-bg);color:var(--gruv-fg);border-radius:var(--small-corner);padding:.2rem .5rem;margin:0;grid-column:output;text-align:left;min-width:12rem}._volumeOutput_2iv9s_28 span{overflow:hidden}@media print{._volumeOutput_2iv9s_28{background:transparent;color:var(--foreground)}}._placeholder_2iv9s_48{opacity:.5}._volumeButton_2iv9s_52._volumeButton_2iv9s_52{padding:2rem;border-radius:var(--small-corner);background-color:var(--table-alternate-background);font-size:2rem;line-height:.5;border:.1rem solid var(--kbd-border);border-bottom-width:.4rem;cursor:pointer}@media print{._volumeButton_2iv9s_52._volumeButton_2iv9s_52{background:transparent;color:var(--foreground)}}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:hover,._volumeButton_2iv9s_52._volumeButton_2iv9s_52:focus{margin-top:.3rem;border-bottom-width:.1rem}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:active{background-color:var(--link)}._buttonGroup_2iv9s_76{display:flex;justify-content:center;gap:.2rem}._volumeOptions_2iv9s_82{display:flex;flex-direction:column;justify-content:center;align-items:center}
+</style><style>.wrapper[data-astro-cid-tb5vpudz]{width:100%;padding:.5rem 0;margin:1em 0}@media screen and (min-width: 40rem){.wrapper[data-astro-cid-tb5vpudz]{width:150%;max-width:90vw;padding-right:1rem}}
+</style><style>._playground_1izfv_1{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch;margin:0;background-color:var(--aside-background);padding:.5rem;border-radius:var(--big-corner)}@media print{._playground_1izfv_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._editorTabs_1izfv_18,._frame_1izfv_19{flex:3;min-width:20rem;max-width:100%;min-height:15rem}._editorTabs_1izfv_18{flex:4}._tabsSection_1izfv_30{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between}._title_1izfv_37{vertical-align:middle}._editor_1izfv_18{border-radius:var(--small-corner);font-family:monospace;background-color:#1d2021}._frame_1izfv_19{position:relative}._iframe_1izfv_51{border-radius:var(--small-corner);height:100%}._error_1izfv_56{position:absolute;bottom:0;right:0;left:0;background-color:#fb4934;padding:.2rem}._error_1izfv_56 p{margin:0}
+</style><style>.react-tabs{-webkit-tap-highlight-color:transparent}.react-tabs__tab-list{margin:0;padding:0}.react-tabs__tab{display:inline-block;border-bottom:none;bottom:-1px;position:relative;list-style:none;padding:.2rem 1rem;min-width:5rem;text-align:center;cursor:pointer}.react-tabs__tab:hover{background-color:var(--table-alternate-background);border-radius:5px 5px 0 0}.react-tabs__tab--selected{background:var(--gruv-bg);border-color:var(--tab-border-color);color:var(--foreground);border-radius:5px 5px 0 0}.react-tabs__tab--selected:hover{background-color:var(--background)}.react-tabs__tab--disabled{color:var(--code-foreground);cursor:default}.react-tabs__tab:focus{outline:none;background-color:var(--link)}.react-tabs__tab:focus:after{content:"";position:absolute;height:5px;left:-4px;right:-4px;bottom:-5px;background-color:transparent}.react-tabs__tab-panel{display:none}.react-tabs__tab-panel--selected{display:block}
+</style><style>code[class*=language-],pre[class*=language-]{color:#ebdbb2;font-family:Consolas,Monaco,Andale Mono,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{color:#fbf1c7;background:#7c6f64}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{color:#fbf1c7;background:#7c6f64}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#1d2021}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.cdata{color:#a89984}.token.delimiter,.token.boolean,.token.keyword,.token.selector,.token.important,.token.atrule{color:#fb4934}.token.operator,.token.punctuation,.token.attr-name{color:#a89984}.token.tag,.token.tag .punctuation,.token.doctype,.token.builtin{color:#fabd2f}.token.entity,.token.number,.token.symbol{color:#d3869b}.token.property,.token.constant,.token.variable{color:#fb4934}.token.string,.token.char{color:#b8bb26}.token.attr-value,.token.attr-value .punctuation{color:#a89984}.token.url{color:#b8bb26;text-decoration:underline}.token.function{color:#fabd2f}.token.regex{background:#b8bb26}.token.bold{font-weight:700}.token.italic{font-style:italic}.token.inserted{background:#a89984}.token.deleted{background:#fb4934}
+</style></head> <body> <script>
 		(function() {
 			// Duplicate of theme.ts
 			function getCurrentTheme() {
@@ -30,8 +31,8 @@ code[class*=language-],pre[class*=language-]{color:#ebdbb2;font-family:Consolas,
 			const element = document.documentElement;
 			element.classList.toggle("dark", theme === "dark");
 		}());
-	</script><nav data-astro-cid-egg7nqdx><a href="/" data-astro-cid-egg7nqdx>&larr; back home</a></nav><main data-astro-cid-egg7nqdx><article class="article" data-astro-cid-egg7nqdx><h1 data-astro-cid-egg7nqdx>(Don&#39;t) make Narrator read things</h1><p>So you’re working on the accessibility for your app, and you want to make Narrator (or any screen reader) read something important.</p>
-<picture><source srcset="/_astro/make-narrator-read-dark.83ded934_29TkEU.webp 300w, /_astro/make-narrator-read-dark.83ded934_e0ih0.webp 600w, /_astro/make-narrator-read-dark.83ded934_Z1GSJ6U.webp 900w" type="image/webp"><img src="/_astro/make-narrator-read-dark.83ded934_ZaPnNc.png" srcset="/_astro/make-narrator-read-dark.83ded934_ZaPnNc.png 300w, /_astro/make-narrator-read-dark.83ded934_Z26Jqc7.png 600w, /_astro/make-narrator-read-dark.83ded934_12xFdT.png 900w" alt="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak" class="key_image light-hidden" width="300" height="300" loading="lazy" decoding="async"></picture><picture><source srcset="/_astro/make-narrator-read.e2da1374_11FwBA.webp 300w, /_astro/make-narrator-read.e2da1374_ZTduLk.webp 600w, /_astro/make-narrator-read.e2da1374_2f4ADG.webp 900w" type="image/webp"><img src="/_astro/make-narrator-read.e2da1374_2gavRn.png" srcset="/_astro/make-narrator-read.e2da1374_2gavRn.png 300w, /_astro/make-narrator-read.e2da1374_kgtts.png 600w, /_astro/make-narrator-read.e2da1374_Z1ACxTs.png 900w" alt="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak" class="key_image dark-hidden" width="300" height="300" loading="lazy" decoding="async"></picture>
+	</script>     <nav data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>&larr; back home</a> </nav> <main data-astro-cid-egg7nqdx>  <article class="article" data-astro-cid-egg7nqdx> <h1 data-astro-cid-egg7nqdx>(Don&#39;t) make Narrator read things</h1> <p>So you’re working on the accessibility for your app, and you want to make Narrator (or any screen reader) read something important.</p>
+<picture> <source srcset="/_astro/make-narrator-read-dark.ztl76vNC_Z2t0pVC.webp 300w, /_astro/make-narrator-read-dark.ztl76vNC_Z1cF4V4.webp 600w, /_astro/make-narrator-read-dark.ztl76vNC_3Eg4u.webp 900w" type="image/webp">  <img src="/_astro/make-narrator-read-dark.ztl76vNC_1pvLwO.png" srcset="/_astro/make-narrator-read-dark.ztl76vNC_1pvLwO.png 300w, /_astro/make-narrator-read-dark.ztl76vNC_Z2ol1gy.png 600w, /_astro/make-narrator-read-dark.ztl76vNC_Z180Fg0.png 900w" alt="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak" width="300" height="300" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/make-narrator-read.DQMuhHag_1F3qmq.webp 300w, /_astro/make-narrator-read.DQMuhHag_16jtuw.webp 600w, /_astro/make-narrator-read.DQMuhHag_wzwCC.webp 900w" type="image/webp">  <img src="/_astro/make-narrator-read.DQMuhHag_1jEDTU.png" srcset="/_astro/make-narrator-read.DQMuhHag_1jEDTU.png 300w, /_astro/make-narrator-read.DQMuhHag_JUH31.png 600w, /_astro/make-narrator-read.DQMuhHag_bbKb7.png 900w" alt="A calm person using a laptop holds up their hand to silence a bulky Narrator robot that's about to speak" width="300" height="300" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture>
 <p><strong>Here are some ways to force a screen reader to announce something</strong>—plus some <em>more accessible</em>, better ways to share information with your screen reader users.</p>
 <aside><p>Note: I work at Microsoft, but this work is unaffiliated.</p></aside>
 <h2 id="do-you-need-to-read-something">Do you need to read something?</h2>
@@ -69,13 +70,168 @@ The purpose of this success criterion is <strong>not to force authors to generat
 <p>For example, when pressing a button shows a (correctly implemented) dialog box, Narrator will automatically read the dialog box. No custom code necessary.</p>
 <aside><h3 id="dont-force-it">Don’t force it</h3><p>Important, though: <strong>don’t <em>force</em> a context change</strong>. If it makes sense for your design, by all means open a window or move keyboard focus. But <a href="https://webaim.org/blog/decoding-wcag-change-of-context/comment-page-1/">context changes have their own accessibility requirements</a>: you can usually only initiate them after deliberate user action. For example, you can’t move system focus if a user types in a search box without pressing enter.</p></aside>
 <p>In many cases, your action already initiates a context change — and you can rely on the system to announce that change for you.</p>
-<div class="wrapper" data-astro-cid-tb5vpudz><!--
-        TODO: I'd prefer client:visible, but this doesn't render remotely on our server
+<div class="wrapper" data-astro-cid-tb5vpudz> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value=="object"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event("astro:visible"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z1Bsqd2" prefix="r0" component-url="/_astro/Playground.BDxZjBuA.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;Example 1: Change context&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;button id=\&quot;edit\&quot;&gt;Edit options&lt;/button&gt;\r\n\r\n&lt;dialog id=\&quot;dialog\&quot; aria-labelledby=\&quot;title\&quot;&gt;\r\n    &lt;h2 id=\&quot;title\&quot;&gt;Options&lt;/h2&gt;\r\n    &lt;p&gt;...&lt;/p&gt;\r\n\r\n    &lt;button id=\&quot;confirm\&quot;&gt;Confirm&lt;/button&gt;\r\n&lt;/dialog&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const dialog = document.getElementById(&#39;dialog&#39;);\r\nconst edit = document.getElementById(&#39;edit&#39;);\r\nconst confirm = document.getElementById(&#39;confirm&#39;);\r\n\r\nedit.addEventListener(&#39;click&#39;, showEditor);\r\nconfirm.addEventListener(&#39;click&#39;, hideEditor);\r\n\r\nfunction showEditor() {\r\n    // Change of context!\r\n    // Showing the dialog moves focus &amp; causes an announcement.\r\n    dialog.showModal();\r\n}\r\n\r\nfunction hideEditor() {\r\n    dialog.close();\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_1izfv_1"><div class="_editorTabs_1izfv_18" data-rttabs="true"><div class="_tabsSection_1izfv_30"><figcaption class="_title_1izfv_37">Example 1: Change context</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab" role="tab" id="tab:r0R3:0" aria-selected="false" aria-disabled="false" aria-controls="panel:r0R3:0" data-rttab="true">HTML</li><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r0R3:1" aria-selected="true" aria-disabled="false" aria-controls="panel:r0R3:1" tabindex="0" data-rttab="true">JS</li></ul></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r0R3:0" aria-labelledby="tab:r0R3:0"></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r0R3:1" aria-labelledby="tab:r0R3:1"><div class="_editor_1izfv_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-jsx" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'dialog'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> edit <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'edit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> confirm <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'confirm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        https://docs.astro.build/en/reference/directives-reference/#clientvisible
-        https://github.com/withastro/astro/issues/6512
-        https://stackoverflow.com/questions/76313674/how-can-i-solve-element-type-is-invalid-error-when-running-astro-build-with-re
-      --><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();;(()=>{var b=Object.defineProperty;var f=(c,o,i)=>o in c?b(c,o,{enumerable:!0,configurable:!0,writable:!0,value:i}):c[o]=i;var l=(c,o,i)=>(f(c,typeof o!="symbol"?o+"":o,i),i);var p;{let c={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},o=t=>{let[e,r]=t;return e in c?c[e](r):void 0},i=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,o(r)]));customElements.get("astro-island")||customElements.define("astro-island",(p=class extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var d;if(!this.hydrator||!this.isConnected)return;let e=(d=this.parentElement)==null?void 0:d.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),a={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let s=n.closest(this.tagName);s!=null&&s.isSameNode(this)&&(a[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let s=n.closest(this.tagName);s!=null&&s.isSameNode(this)&&(a[n.getAttribute("name")||"default"]=n.innerHTML)}let u;try{u=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let s=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(s+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,u,a,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),r.disconnect(),this.childrenConnectedCallback()},r=new MutationObserver(()=>{var a;((a=this.lastChild)==null?void 0:a.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});r.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let a=this.getAttribute("renderer-url"),[h,{default:u}]=await Promise.all([import(this.getAttribute("component-url")),a?import(a):()=>()=>{}]),d=this.getAttribute("component-export")||"default";if(!d.includes("."))this.Component=h[d];else{this.Component=h;for(let n of d.split("."))this.Component=this.Component[n]}return this.hydrator=u,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},l(p,"observedAttributes",["props"]),p))}})();</script><astro-island uid="o76DX" component-url="/_astro/Playground.b1f754ae.js" component-export="default" renderer-url="/_astro/client.1da0f1df.js" props="{&quot;title&quot;:[0,&quot;Example 1: Change context&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;button id=\&quot;edit\&quot;&gt;Edit options&lt;/button&gt;\r\n\r\n&lt;dialog id=\&quot;dialog\&quot; aria-labelledby=\&quot;title\&quot;&gt;\r\n    &lt;h2 id=\&quot;title\&quot;&gt;Options&lt;/h2&gt;\r\n    &lt;p&gt;...&lt;/p&gt;\r\n\r\n    &lt;button id=\&quot;confirm\&quot;&gt;Confirm&lt;/button&gt;\r\n&lt;/dialog&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const dialog = document.getElementById(&#39;dialog&#39;);\r\nconst edit = document.getElementById(&#39;edit&#39;);\r\nconst confirm = document.getElementById(&#39;confirm&#39;);\r\n\r\nedit.addEventListener(&#39;click&#39;, showEditor);\r\nconfirm.addEventListener(&#39;click&#39;, hideEditor);\r\n\r\nfunction showEditor() {\r\n    // Change of context!\r\n    // Showing the dialog moves focus &amp; causes an announcement.\r\n    dialog.showModal();\r\n}\r\n\r\nfunction hideEditor() {\r\n    dialog.close();\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr="" client="only" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island></div>
+edit<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> showEditor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+confirm<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> hideEditor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">showEditor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Change of context!</span>
+    <span class="token comment">// Showing the dialog moves focus &amp; causes an announcement.</span>
+    dialog<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">hideEditor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    dialog<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">const dialog = document.getElementById(&#x27;dialog&#x27;);
+const edit = document.getElementById(&#x27;edit&#x27;);
+const confirm = document.getElementById(&#x27;confirm&#x27;);
+
+edit.addEventListener(&#x27;click&#x27;, showEditor);
+confirm.addEventListener(&#x27;click&#x27;, hideEditor);
+
+function showEditor() {
+    // Change of context!
+    // Showing the dialog moves focus &amp; causes an announcement.
+    dialog.showModal();
+}
+
+function hideEditor() {
+    dialog.close();
+}</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_1izfv_19"><iframe class="_iframe_1izfv_51" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;Example 1: Change context&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;button id=&quot;edit&quot;&gt;Edit options&lt;/button&gt;
+
+&lt;dialog id=&quot;dialog&quot; aria-labelledby=&quot;title&quot;&gt;
+    &lt;h2 id=&quot;title&quot;&gt;Options&lt;/h2&gt;
+    &lt;p&gt;...&lt;/p&gt;
+
+    &lt;button id=&quot;confirm&quot;&gt;Confirm&lt;/button&gt;
+&lt;/dialog&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r0R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r0R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          const dialog = document.getElementById(&#x27;dialog&#x27;);
+const edit = document.getElementById(&#x27;edit&#x27;);
+const confirm = document.getElementById(&#x27;confirm&#x27;);
+
+edit.addEventListener(&#x27;click&#x27;, showEditor);
+confirm.addEventListener(&#x27;click&#x27;, hideEditor);
+
+function showEditor() {
+    // Change of context!
+    // Showing the dialog moves focus &amp; causes an announcement.
+    dialog.showModal();
+}
+
+function hideEditor() {
+    dialog.close();
+}
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
 <aside><h3 id="page-navigation-can-still-be-disorienting">Page navigation can still be disorienting</h3><p>Some changes of context can still be disorienting for screen reader users — and probably warrant a bit more discussion with your team.</p><p>For example, although there are clear accessibility APIs for screen readers <a href="https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-event-ids#:~:text=UIA_AutomationFocusChangedEventId">to detect focus change</a> (and thus they can detect many common context changes, like window switching or popup windows), there is <em>no</em> reliable API to detect page navigation.</p><p>Instead, folks do all sorts of different things:</p><ul>
 <li>Some apps will <em>force</em> a Narrator announcement when pages load (Microsoft Edge, for example)</li>
 <li>Some UI frameworks will move focus or force an announcement after page navigation (<a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-9.0#focus-an-element-on-navigation">like ASP.NET</a>)</li>
@@ -86,13 +242,180 @@ The purpose of this success criterion is <strong>not to force authors to generat
 <h2 id="method-2-change-properties">Method 2: Change properties</h2>
 <p>The next best way to announce information is by <strong>changing properties</strong> on the currently focused control. This, too, might happen automatically, especially with built-in controls: checkboxes announce when they’re checked, buttons announce when their name changes, slider announce their new value, etc.</p>
 <p>For example, if you already change the text of a button from <code>Copy</code> to <code>Copied</code> when its pressed, Narrator will automatically read that change. Again, no extra code necessary.</p>
-<div class="wrapper" data-astro-cid-tb5vpudz><!--
-        TODO: I'd prefer client:visible, but this doesn't render remotely on our server
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="vTIFM" prefix="r1" component-url="/_astro/Playground.BDxZjBuA.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;Example 2: Change properties&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;div&gt;\r\n    &lt;input type=\&quot;text\&quot;\r\n        id=\&quot;text\&quot;\r\n        value=\&quot;https://ben.stolovitz.com/\&quot;\r\n        readonly\r\n        aria-label=\&quot;My site\&quot;&gt;\r\n    &lt;button\r\n        id=\&quot;copy\&quot;\r\n        aria-label=\&quot;Copy\&quot;\r\n        title=\&quot;Copy\&quot;&gt;📋&lt;/button&gt;\r\n&lt;/div&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const copy = document.getElementById(&#39;copy&#39;);\r\n\r\ncopy.addEventListener(&#39;click&#39;, copyText);\r\n\r\nfunction copyText() {\r\n    const text = document.getElementById(&#39;text&#39;).value;\r\n    navigator.clipboard.writeText(text);\r\n\r\n    // Property change!\r\n    // Changing properties of the focused element causes an announcement.\r\n    copy.innerText = &#39;✅&#39;;\r\n    copy.ariaLabel = &#39;Copied!&#39;;\r\n    copy.title = &#39;Copied!&#39;;\r\n\r\n    // You may want to reset the text after a delay so that subsequent presses also confirm the action. But you may need to let users adjust that delay (see WCAG SC 2.2.1 - Timing Adjustable).\r\n    //\r\n    // https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html\r\n    // https://github.com/w3c/wcag/issues/976\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_1izfv_1"><div class="_editorTabs_1izfv_18" data-rttabs="true"><div class="_tabsSection_1izfv_30"><figcaption class="_title_1izfv_37">Example 2: Change properties</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab" role="tab" id="tab:r1R3:0" aria-selected="false" aria-disabled="false" aria-controls="panel:r1R3:0" data-rttab="true">HTML</li><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r1R3:1" aria-selected="true" aria-disabled="false" aria-controls="panel:r1R3:1" tabindex="0" data-rttab="true">JS</li></ul></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r1R3:0" aria-labelledby="tab:r1R3:0"></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r1R3:1" aria-labelledby="tab:r1R3:1"><div class="_editor_1izfv_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-jsx" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token keyword">const</span> copy <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'copy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        https://docs.astro.build/en/reference/directives-reference/#clientvisible
-        https://github.com/withastro/astro/issues/6512
-        https://stackoverflow.com/questions/76313674/how-can-i-solve-element-type-is-invalid-error-when-running-astro-build-with-re
-      --><astro-island uid="wrSFs" component-url="/_astro/Playground.b1f754ae.js" component-export="default" renderer-url="/_astro/client.1da0f1df.js" props="{&quot;title&quot;:[0,&quot;Example 2: Change properties&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;div&gt;\r\n    &lt;input type=\&quot;text\&quot;\r\n        id=\&quot;text\&quot;\r\n        value=\&quot;https://ben.stolovitz.com/\&quot;\r\n        readonly\r\n        aria-label=\&quot;My site\&quot;&gt;\r\n    &lt;button\r\n        id=\&quot;copy\&quot;\r\n        aria-label=\&quot;Copy\&quot;\r\n        title=\&quot;Copy\&quot;&gt;📋&lt;/button&gt;\r\n&lt;/div&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const copy = document.getElementById(&#39;copy&#39;);\r\n\r\ncopy.addEventListener(&#39;click&#39;, copyText);\r\n\r\nfunction copyText() {\r\n    const text = document.getElementById(&#39;text&#39;).value;\r\n    navigator.clipboard.writeText(text);\r\n\r\n    // Property change!\r\n    // Changing properties of the focused element causes an announcement.\r\n    copy.innerText = &#39;✅&#39;;\r\n    copy.ariaLabel = &#39;Copied!&#39;;\r\n    copy.title = &#39;Copied!&#39;;\r\n\r\n    // You may want to reset the text after a delay so that subsequent presses also confirm the action. But you may need to let users adjust that delay (see WCAG SC 2.2.1 - Timing Adjustable).\r\n    //\r\n    // https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html\r\n    // https://github.com/w3c/wcag/issues/976\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr="" client="only" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island></div>
+copy<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> copyText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">copyText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> text <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+    navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">.</span><span class="token function">writeText</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Property change!</span>
+    <span class="token comment">// Changing properties of the focused element causes an announcement.</span>
+    copy<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">'✅'</span><span class="token punctuation">;</span>
+    copy<span class="token punctuation">.</span>ariaLabel <span class="token operator">=</span> <span class="token string">'Copied!'</span><span class="token punctuation">;</span>
+    copy<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Copied!'</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// You may want to reset the text after a delay so that subsequent presses also confirm the action. But you may need to let users adjust that delay (see WCAG SC 2.2.1 - Timing Adjustable).</span>
+    <span class="token comment">//</span>
+    <span class="token comment">// https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html</span>
+    <span class="token comment">// https://github.com/w3c/wcag/issues/976</span>
+<span class="token punctuation">}</span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">const copy = document.getElementById(&#x27;copy&#x27;);
+
+copy.addEventListener(&#x27;click&#x27;, copyText);
+
+function copyText() {
+    const text = document.getElementById(&#x27;text&#x27;).value;
+    navigator.clipboard.writeText(text);
+
+    // Property change!
+    // Changing properties of the focused element causes an announcement.
+    copy.innerText = &#x27;✅&#x27;;
+    copy.ariaLabel = &#x27;Copied!&#x27;;
+    copy.title = &#x27;Copied!&#x27;;
+
+    // You may want to reset the text after a delay so that subsequent presses also confirm the action. But you may need to let users adjust that delay (see WCAG SC 2.2.1 - Timing Adjustable).
+    //
+    // https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html
+    // https://github.com/w3c/wcag/issues/976
+}</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_1izfv_19"><iframe class="_iframe_1izfv_51" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;Example 2: Change properties&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div&gt;
+    &lt;input type=&quot;text&quot;
+        id=&quot;text&quot;
+        value=&quot;https://ben.stolovitz.com/&quot;
+        readonly
+        aria-label=&quot;My site&quot;&gt;
+    &lt;button
+        id=&quot;copy&quot;
+        aria-label=&quot;Copy&quot;
+        title=&quot;Copy&quot;&gt;📋&lt;/button&gt;
+&lt;/div&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r1R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r1R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          const copy = document.getElementById(&#x27;copy&#x27;);
+
+copy.addEventListener(&#x27;click&#x27;, copyText);
+
+function copyText() {
+    const text = document.getElementById(&#x27;text&#x27;).value;
+    navigator.clipboard.writeText(text);
+
+    // Property change!
+    // Changing properties of the focused element causes an announcement.
+    copy.innerText = &#x27;✅&#x27;;
+    copy.ariaLabel = &#x27;Copied!&#x27;;
+    copy.title = &#x27;Copied!&#x27;;
+
+    // You may want to reset the text after a delay so that subsequent presses also confirm the action. But you may need to let users adjust that delay (see WCAG SC 2.2.1 - Timing Adjustable).
+    //
+    // https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html
+    // https://github.com/w3c/wcag/issues/976
+}
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
 <aside><h2 id="take-it-further">Take it further</h2><p>But you can take that even further!</p><p>Certainly controls should expose basic properties like name to screen readers (that’s <a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html">WCAG SC 4.1.2 – Name, Role, Value</a>). But consider adding more advanced information to those controls, too. For example, for a live-updating search box, you could add status information about the search to its full description: <code>3 results, search complete</code>. This has a number of benefits over simply telling Narrator to read something:</p><ul>
 <li><strong>It’s still a notification!</strong> Screen readers will announce changes to most properties on the currently-focused element. Mission accomplished!</li>
 <li>But <strong>it’s contextual</strong>: because it’s a property update (and not an explicit command to &quot;read this&quot;), screen readers can delay your announcement or present it differently as they wish.</li>
@@ -106,13 +429,178 @@ The purpose of this success criterion is <strong>not to force authors to generat
 <p>Like with previous methods, you can often rely on standard tools to solve this: <strong>live regions</strong>.</p>
 <p>On the web, screen readers will automatically announce content changes in any custom <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">live regions</a>—and, even easier, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#roles_with_implicit_live_region_attributes"><code>role</code>s with <em>implicit</em> live regions</a>—on your page.</p>
 <p>This is often exactly what you want: you display some text &amp; you want Narrator to announce it! Live regions do just that; you simply mark the text’s container as a live region &amp; Narrator does the rest. Like, if your search has onscreen status text <code>10 results</code>, give its container element <code>role=&quot;status&quot;</code>—Narrator will read changes automatically.</p>
-<div class="wrapper" data-astro-cid-tb5vpudz><!--
-        TODO: I'd prefer client:visible, but this doesn't render remotely on our server
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z16c76E" prefix="r2" component-url="/_astro/Playground.BDxZjBuA.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;Example 3: Live regions&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;input type=\&quot;text\&quot; id=\&quot;search\&quot; placeholder=\&quot;Search my files\&quot; aria-label=\&quot;Search\&quot;&gt;\r\n\r\n&lt;small id=\&quot;results\&quot; role=\&quot;status\&quot;&gt;No results&lt;/small&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const search = document.getElementById(&#39;search&#39;);\r\nconst results = document.getElementById(&#39;results&#39;);\r\n\r\nsearch.addEventListener(&#39;input&#39;, executeSearch);\r\n\r\nlet searchTimeout;\r\nfunction executeSearch() {\r\n    if (searchTimeout) {\r\n        clearTimeout(searchTimeout);\r\n    }\r\n\r\n    // Live region change!\r\n    // Changing the text of a live region causes an announcement. Alternatively, use `aria-describedby` on the searchbox (instead of `role` on the status div).\r\n    if (results.innerText !== &#39;Searching...&#39;) {\r\n        results.innerText = &#39;Searching...&#39;;\r\n    }\r\n    searchTimeout = setTimeout(() =&gt; {\r\n        const count = Math.floor(Math.random() * 10) + 1;\r\n        results.innerText = `${count} results`;\r\n    }, 1000);\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_1izfv_1"><div class="_editorTabs_1izfv_18" data-rttabs="true"><div class="_tabsSection_1izfv_30"><figcaption class="_title_1izfv_37">Example 3: Live regions</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab" role="tab" id="tab:r2R3:0" aria-selected="false" aria-disabled="false" aria-controls="panel:r2R3:0" data-rttab="true">HTML</li><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r2R3:1" aria-selected="true" aria-disabled="false" aria-controls="panel:r2R3:1" tabindex="0" data-rttab="true">JS</li></ul></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r2R3:0" aria-labelledby="tab:r2R3:0"></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r2R3:1" aria-labelledby="tab:r2R3:1"><div class="_editor_1izfv_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-jsx" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token keyword">const</span> search <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'search'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> results <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'results'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        https://docs.astro.build/en/reference/directives-reference/#clientvisible
-        https://github.com/withastro/astro/issues/6512
-        https://stackoverflow.com/questions/76313674/how-can-i-solve-element-type-is-invalid-error-when-running-astro-build-with-re
-      --><astro-island uid="1BpA40" component-url="/_astro/Playground.b1f754ae.js" component-export="default" renderer-url="/_astro/client.1da0f1df.js" props="{&quot;title&quot;:[0,&quot;Example 3: Live regions&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;input type=\&quot;text\&quot; id=\&quot;search\&quot; placeholder=\&quot;Search my files\&quot; aria-label=\&quot;Search\&quot;&gt;\r\n\r\n&lt;small id=\&quot;results\&quot; role=\&quot;status\&quot;&gt;No results&lt;/small&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const search = document.getElementById(&#39;search&#39;);\r\nconst results = document.getElementById(&#39;results&#39;);\r\n\r\nsearch.addEventListener(&#39;input&#39;, executeSearch);\r\n\r\nlet searchTimeout;\r\nfunction executeSearch() {\r\n    if (searchTimeout) {\r\n        clearTimeout(searchTimeout);\r\n    }\r\n\r\n    // Live region change!\r\n    // Changing the text of a live region causes an announcement. Alternatively, use `aria-describedby` on the searchbox (instead of `role` on the status div).\r\n    if (results.innerText !== &#39;Searching...&#39;) {\r\n        results.innerText = &#39;Searching...&#39;;\r\n    }\r\n    searchTimeout = setTimeout(() =&gt; {\r\n        const count = Math.floor(Math.random() * 10) + 1;\r\n        results.innerText = `${count} results`;\r\n    }, 1000);\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr="" client="only" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island></div>
+search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> executeSearch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> searchTimeout<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">executeSearch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>searchTimeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">clearTimeout</span><span class="token punctuation">(</span>searchTimeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Live region change!</span>
+    <span class="token comment">// Changing the text of a live region causes an announcement. Alternatively, use `aria-describedby` on the searchbox (instead of `role` on the status div).</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">.</span>innerText <span class="token operator">!==</span> <span class="token string">'Searching...'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        results<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">'Searching...'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    searchTimeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> count <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        results<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> results</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">const search = document.getElementById(&#x27;search&#x27;);
+const results = document.getElementById(&#x27;results&#x27;);
+
+search.addEventListener(&#x27;input&#x27;, executeSearch);
+
+let searchTimeout;
+function executeSearch() {
+    if (searchTimeout) {
+        clearTimeout(searchTimeout);
+    }
+
+    // Live region change!
+    // Changing the text of a live region causes an announcement. Alternatively, use `aria-describedby` on the searchbox (instead of `role` on the status div).
+    if (results.innerText !== &#x27;Searching...&#x27;) {
+        results.innerText = &#x27;Searching...&#x27;;
+    }
+    searchTimeout = setTimeout(() =&gt; {
+        const count = Math.floor(Math.random() * 10) + 1;
+        results.innerText = `${count} results`;
+    }, 1000);
+}</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_1izfv_19"><iframe class="_iframe_1izfv_51" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;Example 3: Live regions&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;input type=&quot;text&quot; id=&quot;search&quot; placeholder=&quot;Search my files&quot; aria-label=&quot;Search&quot;&gt;
+
+&lt;small id=&quot;results&quot; role=&quot;status&quot;&gt;No results&lt;/small&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r2R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r2R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          const search = document.getElementById(&#x27;search&#x27;);
+const results = document.getElementById(&#x27;results&#x27;);
+
+search.addEventListener(&#x27;input&#x27;, executeSearch);
+
+let searchTimeout;
+function executeSearch() {
+    if (searchTimeout) {
+        clearTimeout(searchTimeout);
+    }
+
+    // Live region change!
+    // Changing the text of a live region causes an announcement. Alternatively, use `aria-describedby` on the searchbox (instead of `role` on the status div).
+    if (results.innerText !== &#x27;Searching...&#x27;) {
+        results.innerText = &#x27;Searching...&#x27;;
+    }
+    searchTimeout = setTimeout(() =&gt; {
+        const count = Math.floor(Math.random() * 10) + 1;
+        results.innerText = `${count} results`;
+    }, 1000);
+}
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
 <p>The <a href="https://www.w3.org/WAI/WCAG21/Understanding/status-messages.html#techniques">Techniques section</a> of SC 4.1.3’s documentation describes many ways to use live regions &amp; roles. Live regions offer many configuration options (like how aggressively they should interrupt users) and have some strange behaviors (like how <code>role=&quot;alert&quot;</code> regions sometimes read out when loaded, but nothing else does); it’s worth reading <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN docs</a> or <a href="https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/">deeper guides</a>.</p>
 <p>Live regions are a <em>framework</em> thing, and not every UI framework has them. <a href="https://learn.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties.livesetting?view=winrt-26100">Microsoft WinUI &amp; UWP do</a>, but traditional Win32 apps don’t, and <a href="https://stackoverflow.com/a/76733302/788168">SwiftUI doesn’t either</a>. Behind the scenes, frameworks convert live region changes into forced announcements. If your framework doesn’t support live regions, you can emulate them yourself — by forcing announcements, below.</p>
 <aside><h2 id="be-wary-of-live-regions">Be wary of live regions</h2><p>Live regions are tempting for their power to announce anything — but they can be <em>very</em> annoying to your users for the same reason. Live regions are rarely necessary in my experience, so before you use one, you should probably ask:</p><ul>
@@ -150,13 +638,219 @@ The purpose of this success criterion is <strong>not to force authors to generat
 <p>Microsoft is calling this <strong>confirmation of action</strong>. In 2020, <a href="https://techcommunity.microsoft.com/t5/microsoft-365-insider-blog/confirmation-of-action-in-word-for-windows/ba-p/4210810">they updated Office apps</a> to read changes like this; for example, pressing <kbd>Ctrl</kbd>+<kbd>B</kbd> in Word will announce <code>bold on</code> or <code>bold off</code>. That change ① is <em>clearly</em> a status message (it’s the “result of an action” &amp; doesn’t move focus) &amp; it’s communicated visually to users (the “B” button becomes enabled), but ② <em>it doesn’t correspond to a live region</em>. The top bar can change in many non-status ways, so reading all changes there (via a live region) would be annoying. So it’s clear that forcing an announcement makes sense in some common cases.</p>
 <p>However, you won’t find a WCAG guideline recommending or requiring confirmation of action. While I truly believe this is a <em>gap</em> in the guidelines, WCAG guidance assumes any status messages can be announced via a live region.</p>
 <p>Heck — on the web, there’s not even an API for it. Whereas many desktop UI frameworks don’t <em>support</em> live regions, with HTML you must <em>use</em> a (hidden) live region to force announcements:</p>
-<div class="wrapper" data-astro-cid-tb5vpudz><!--
-        TODO: I'd prefer client:visible, but this doesn't render remotely on our server
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z1DNud" prefix="r3" component-url="/_astro/Playground.BDxZjBuA.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;Example 4: Forced announcement&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;button\r\n    id=\&quot;bold\&quot;\r\n    aria-checked=\&quot;false\&quot;&gt;Bold&lt;/button&gt;\r\n&lt;p&gt;(click this demo &amp;amp; press Ctrl-B)&lt;/p&gt;\r\n\r\n&lt;!-- Hidden announcer --&gt;\r\n&lt;div\r\n    id=\&quot;announcer\&quot;\r\n    aria-live=\&quot;polite\&quot;\r\n    aria-atomic=\&quot;true\&quot;\r\n    aria-relevant=\&quot;additions text\&quot;&gt;&lt;/div&gt;&quot;],&quot;css&quot;:[0,&quot;p {\r\n    margin: 0;\r\n    opacity: 0.7;\r\n}\r\n\r\nbutton {\r\n    border: 0;\r\n    border-radius: 0.2rem;\r\n}\r\nbutton[aria-checked=\&quot;true\&quot;] {\r\n    background-color: var(--link);\r\n}\r\n\r\n#announcer {\r\n    /* https://webaim.org/techniques/css/invisiblecontent/#offscreen */\r\n    position: absolute;\r\n    left: -10000px;\r\n    top: auto;\r\n    width: 1px;\r\n    height: 1px;\r\n    overflow: hidden;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const announcer = document.getElementById(\&quot;announcer\&quot;);\r\nconst bold = document.getElementById(\&quot;bold\&quot;);\r\n\r\nbold.addEventListener(&#39;click&#39;, toggleBold);\r\ndocument.addEventListener(&#39;keyup&#39;, function (e) {\r\n    if((e.ctrlKey || e.metaKey) &amp;&amp; e.key === &#39;b&#39;) {\r\n        toggleBold();\r\n    }\r\n});\r\n\r\n// Emulates the proposed ARIA Notify API. See also `react-announce-a11y` or `react-a11y-announcer`.\r\nfunction announce(message)\r\n{\r\n    announcer.innerHTML = message;\r\n}\r\n\r\nfunction toggleBold()\r\n{\r\n    const oldState = (bold.ariaChecked ?? \&quot;false\&quot;) == \&quot;true\&quot;;\r\n    bold.ariaChecked = !oldState;\r\n\r\n    // Forced announcement!\r\n    // This function changes the state of a hidden live region, forcing an announcement. Useful in some circumstances, but use one of the previous methods if you can.\r\n    announce(!oldState ? \&quot;bold on\&quot; : \&quot;bold off\&quot;);\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_1izfv_1"><div class="_editorTabs_1izfv_18" data-rttabs="true"><div class="_tabsSection_1izfv_30"><figcaption class="_title_1izfv_37">Example 4: Forced announcement</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab" role="tab" id="tab:r3R3:0" aria-selected="false" aria-disabled="false" aria-controls="panel:r3R3:0" data-rttab="true">HTML</li><li class="react-tabs__tab" role="tab" id="tab:r3R3:1" aria-selected="false" aria-disabled="false" aria-controls="panel:r3R3:1" data-rttab="true">CSS</li><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r3R3:2" aria-selected="true" aria-disabled="false" aria-controls="panel:r3R3:2" tabindex="0" data-rttab="true">JS</li></ul></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r3R3:0" aria-labelledby="tab:r3R3:0"></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r3R3:1" aria-labelledby="tab:r3R3:1"></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r3R3:2" aria-labelledby="tab:r3R3:2"><div class="_editor_1izfv_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-jsx" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token keyword">const</span> announcer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"announcer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> bold <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"bold"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        https://docs.astro.build/en/reference/directives-reference/#clientvisible
-        https://github.com/withastro/astro/issues/6512
-        https://stackoverflow.com/questions/76313674/how-can-i-solve-element-type-is-invalid-error-when-running-astro-build-with-re
-      --><astro-island uid="Z1VdAN7" component-url="/_astro/Playground.b1f754ae.js" component-export="default" renderer-url="/_astro/client.1da0f1df.js" props="{&quot;title&quot;:[0,&quot;Example 4: Forced announcement&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;button\r\n    id=\&quot;bold\&quot;\r\n    aria-checked=\&quot;false\&quot;&gt;Bold&lt;/button&gt;\r\n&lt;p&gt;(click this demo &amp;amp; press Ctrl-B)&lt;/p&gt;\r\n\r\n&lt;!-- Hidden announcer --&gt;\r\n&lt;div\r\n    id=\&quot;announcer\&quot;\r\n    aria-live=\&quot;polite\&quot;\r\n    aria-atomic=\&quot;true\&quot;\r\n    aria-relevant=\&quot;additions text\&quot;&gt;&lt;/div&gt;&quot;],&quot;css&quot;:[0,&quot;p {\r\n    margin: 0;\r\n    opacity: 0.7;\r\n}\r\n\r\nbutton {\r\n    border: 0;\r\n    border-radius: 0.2rem;\r\n}\r\nbutton[aria-checked=\&quot;true\&quot;] {\r\n    background-color: var(--link);\r\n}\r\n\r\n#announcer {\r\n    /* https://webaim.org/techniques/css/invisiblecontent/#offscreen */\r\n    position: absolute;\r\n    left: -10000px;\r\n    top: auto;\r\n    width: 1px;\r\n    height: 1px;\r\n    overflow: hidden;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}&quot;],&quot;javascript&quot;:[0,&quot;const announcer = document.getElementById(\&quot;announcer\&quot;);\r\nconst bold = document.getElementById(\&quot;bold\&quot;);\r\n\r\nbold.addEventListener(&#39;click&#39;, toggleBold);\r\ndocument.addEventListener(&#39;keyup&#39;, function (e) {\r\n    if((e.ctrlKey || e.metaKey) &amp;&amp; e.key === &#39;b&#39;) {\r\n        toggleBold();\r\n    }\r\n});\r\n\r\n// Emulates the proposed ARIA Notify API. See also `react-announce-a11y` or `react-a11y-announcer`.\r\nfunction announce(message)\r\n{\r\n    announcer.innerHTML = message;\r\n}\r\n\r\nfunction toggleBold()\r\n{\r\n    const oldState = (bold.ariaChecked ?? \&quot;false\&quot;) == \&quot;true\&quot;;\r\n    bold.ariaChecked = !oldState;\r\n\r\n    // Forced announcement!\r\n    // This function changes the state of a hidden live region, forcing an announcement. Useful in some circumstances, but use one of the previous methods if you can.\r\n    announce(!oldState ? \&quot;bold on\&quot; : \&quot;bold off\&quot;);\r\n}&quot;]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;javascript&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr="" client="only" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island></div>
+bold<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> toggleBold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>ctrlKey <span class="token operator">||</span> e<span class="token punctuation">.</span>metaKey<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>key <span class="token operator">===</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">toggleBold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Emulates the proposed ARIA Notify API. See also `react-announce-a11y` or `react-a11y-announcer`.</span>
+<span class="token keyword">function</span> <span class="token function">announce</span><span class="token punctuation">(</span><span class="token parameter">message</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    announcer<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> message<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toggleBold</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> oldState <span class="token operator">=</span> <span class="token punctuation">(</span>bold<span class="token punctuation">.</span>ariaChecked <span class="token operator">??</span> <span class="token string">"false"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"true"</span><span class="token punctuation">;</span>
+    bold<span class="token punctuation">.</span>ariaChecked <span class="token operator">=</span> <span class="token operator">!</span>oldState<span class="token punctuation">;</span>
+
+    <span class="token comment">// Forced announcement!</span>
+    <span class="token comment">// This function changes the state of a hidden live region, forcing an announcement. Useful in some circumstances, but use one of the previous methods if you can.</span>
+    <span class="token function">announce</span><span class="token punctuation">(</span><span class="token operator">!</span>oldState <span class="token operator">?</span> <span class="token string">"bold on"</span> <span class="token operator">:</span> <span class="token string">"bold off"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">const announcer = document.getElementById(&quot;announcer&quot;);
+const bold = document.getElementById(&quot;bold&quot;);
+
+bold.addEventListener(&#x27;click&#x27;, toggleBold);
+document.addEventListener(&#x27;keyup&#x27;, function (e) {
+    if((e.ctrlKey || e.metaKey) &amp;&amp; e.key === &#x27;b&#x27;) {
+        toggleBold();
+    }
+});
+
+// Emulates the proposed ARIA Notify API. See also `react-announce-a11y` or `react-a11y-announcer`.
+function announce(message)
+{
+    announcer.innerHTML = message;
+}
+
+function toggleBold()
+{
+    const oldState = (bold.ariaChecked ?? &quot;false&quot;) == &quot;true&quot;;
+    bold.ariaChecked = !oldState;
+
+    // Forced announcement!
+    // This function changes the state of a hidden live region, forcing an announcement. Useful in some circumstances, but use one of the previous methods if you can.
+    announce(!oldState ? &quot;bold on&quot; : &quot;bold off&quot;);
+}</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_1izfv_19"><iframe class="_iframe_1izfv_51" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;Example 4: Forced announcement&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}&lt;/style&gt;
+      &lt;style&gt;p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+button {
+    border: 0;
+    border-radius: 0.2rem;
+}
+button[aria-checked=&quot;true&quot;] {
+    background-color: var(--link);
+}
+
+#announcer {
+    /* https://webaim.org/techniques/css/invisiblecontent/#offscreen */
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;button
+    id=&quot;bold&quot;
+    aria-checked=&quot;false&quot;&gt;Bold&lt;/button&gt;
+&lt;p&gt;(click this demo &amp;amp; press Ctrl-B)&lt;/p&gt;
+
+&lt;!-- Hidden announcer --&gt;
+&lt;div
+    id=&quot;announcer&quot;
+    aria-live=&quot;polite&quot;
+    aria-atomic=&quot;true&quot;
+    aria-relevant=&quot;additions text&quot;&gt;&lt;/div&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r3R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r3R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          const announcer = document.getElementById(&quot;announcer&quot;);
+const bold = document.getElementById(&quot;bold&quot;);
+
+bold.addEventListener(&#x27;click&#x27;, toggleBold);
+document.addEventListener(&#x27;keyup&#x27;, function (e) {
+    if((e.ctrlKey || e.metaKey) &amp;&amp; e.key === &#x27;b&#x27;) {
+        toggleBold();
+    }
+});
+
+// Emulates the proposed ARIA Notify API. See also `react-announce-a11y` or `react-a11y-announcer`.
+function announce(message)
+{
+    announcer.innerHTML = message;
+}
+
+function toggleBold()
+{
+    const oldState = (bold.ariaChecked ?? &quot;false&quot;) == &quot;true&quot;;
+    bold.ariaChecked = !oldState;
+
+    // Forced announcement!
+    // This function changes the state of a hidden live region, forcing an announcement. Useful in some circumstances, but use one of the previous methods if you can.
+    announce(!oldState ? &quot;bold on&quot; : &quot;bold off&quot;);
+}
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
 <p>It’s not too bad:</p>
 <ul>
 <li><a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Accessibility/AriaNotify/explainer.md">ARIA Notify</a> (previously the &quot;<a href="https://wicg.github.io/aom/notification-api.html">Accessibility Notification API</a>&quot;) is a Microsoft-led proposal describing these gaps and requesting a new official API to handle such announcements.</li>
@@ -183,6 +877,6 @@ The purpose of this success criterion is <strong>not to force authors to generat
 <p>As always, test your code with actual screen reader users. Accessible design is design, and design means talking to your users. Hopefully these tools give you more ways to design software that’s accessible to everyone.</p>
 <hr/>
 <p><em>Thanks to <a href="https://github.com/douggeoffray">Doug Geoffray</a> and <a href="https://github.com/mwcampbell">Matt Campbell</a> for consulting on this article. Thanks to Lynne Bai and Melinda Ivanov for beta testing.</em></p>
-<p><em>Tested using Narrator in Edge on Windows 11.</em></p></article><hr data-astro-cid-egg7nqdx><aside data-astro-cid-egg7nqdx><nav class="bottom_nav" data-astro-cid-egg7nqdx><a class="prev" href="/posts/beep_more/" data-astro-cid-egg7nqdx>&larr; Computers should beep more</a><a class="next" href="/posts/tiktok_will_always_be_temporary/" data-astro-cid-egg7nqdx>TikTok will always be temporary &rarr;</a></nav>
+<p><em>Tested using Narrator in Edge on Windows 11.</em></p> </article> <hr data-astro-cid-egg7nqdx> <aside data-astro-cid-egg7nqdx> <nav class="bottom_nav" data-astro-cid-egg7nqdx> <a class="prev" href="/posts/beep_more/" data-astro-cid-egg7nqdx>&larr; Computers should beep more</a> <a class="next" href="/posts/tiktok_will_always_be_temporary/" data-astro-cid-egg7nqdx>TikTok will always be temporary &rarr;</a> </nav> 
 Published
-<time datetime="2025-02-05T00:00:00.000Z" data-astro-cid-egg7nqdx>Feb 5, 2025</time></aside></main><menu data-astro-cid-egg7nqdx><astro-island uid="yGADS" component-url="/_astro/ThemeButton.7dfc907e.js" component-export="default" renderer-url="/_astro/client.1da0f1df.js" props="{&quot;data-astro-cid-egg7nqdx&quot;:[0,true]}" ssr="" client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}"></astro-island></menu></body></html>
+<time datetime="2025-02-05T00:00:00.000Z" data-astro-cid-egg7nqdx> Feb 5, 2025 </time>   </aside> </main> <menu data-astro-cid-egg7nqdx> <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><astro-island uid="fFwL3" component-url="/_astro/ThemeButton.DLzJdG7X.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;data-astro-cid-egg7nqdx&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}"></astro-island> </menu>  </body></html>
