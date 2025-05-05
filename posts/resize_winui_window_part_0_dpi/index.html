@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN0HVXBFN4"></script><script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'G-ZN0HVXBFN4');
+	</script><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v5.5.5"><title>Resize a window in WinUI (part 0: what is DPI) - Ben Stolovitz</title><meta name="description" content="Learn about DPI-awareness and scale factors to understand window resizing in WinUI and Win32."><link rel="canonical" href="https://ben.stolovitz.com/posts/resize_winui_window_part_0_dpi/"><meta property="og:url" content="https://ben.stolovitz.com/posts/resize_winui_window_part_0_dpi/"><meta property="og:type" content="article"><meta property="og:title" content="Resize a window in WinUI (part 0: what is DPI)"><meta property="og:description" content="Learn about DPI-awareness and scale factors to understand window resizing in WinUI and Win32."><meta property="og:sitename" content="ben.stolovitz.com"><meta property="article:published_time" content="2025-05-05T00:00:00.000Z"><meta property="article:author" content="Ben Stolovitz"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="ben.stolovitz.com"><meta property="twitter:url" content="https://ben.stolovitz.com/posts/resize_winui_window_part_0_dpi/"><meta name="twitter:title" content="Resize a window in WinUI (part 0: what is DPI)"><meta name="twitter:description" content="Learn about DPI-awareness and scale factors to understand window resizing in WinUI and Win32."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css"><link rel="stylesheet" href="/_astro/_path_.Cks2J32r.css">
+<link rel="stylesheet" href="/_astro/_slug_.Df8uOlM5.css">
+<style>._volumeSimulator_2iv9s_1{text-align:center;background-color:var(--aside-background);padding:1rem;border-radius:var(--big-corner);position:relative;display:flex;gap:1rem;flex-direction:column}@media print{._volumeSimulator_2iv9s_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._volumeStatus_2iv9s_18{display:grid;grid-template-columns:1fr [output] max-content [sound] 1fr}._playing_2iv9s_23{grid-column:sound;text-align:right}._volumeOutput_2iv9s_28{background:var(--gruv-bg);color:var(--gruv-fg);border-radius:var(--small-corner);padding:.2rem .5rem;margin:0;grid-column:output;text-align:left;min-width:12rem}._volumeOutput_2iv9s_28 span{overflow:hidden}@media print{._volumeOutput_2iv9s_28{background:transparent;color:var(--foreground)}}._placeholder_2iv9s_48{opacity:.5}._volumeButton_2iv9s_52._volumeButton_2iv9s_52{padding:2rem;border-radius:var(--small-corner);background-color:var(--table-alternate-background);font-size:2rem;line-height:.5;border:.1rem solid var(--kbd-border);border-bottom-width:.4rem;cursor:pointer}@media print{._volumeButton_2iv9s_52._volumeButton_2iv9s_52{background:transparent;color:var(--foreground)}}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:hover,._volumeButton_2iv9s_52._volumeButton_2iv9s_52:focus{margin-top:.3rem;border-bottom-width:.1rem}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:active{background-color:var(--link)}._buttonGroup_2iv9s_76{display:flex;justify-content:center;gap:.2rem}._volumeOptions_2iv9s_82{display:flex;flex-direction:column;justify-content:center;align-items:center}
+@keyframes _slideInFromLeft_1hpfe_1{0%{opacity:0}to{opacity:1}}._themeButton_1hpfe_9{appearance:none;padding:.5rem;border-radius:1rem;background:var(--table-alternate-background);border:0;cursor:pointer;position:fixed;top:1.3rem;right:1rem;animation:.3s ease-out 0s 1 _slideInFromLeft_1hpfe_1}._themeButton_1hpfe_9:hover,._themeButton_1hpfe_9:focus{background:var(--link);color:var(--background)}@media print{._themeButton_1hpfe_9{display:none}}
+</style><style>.fraction[data-astro-cid-ri6qmbkg]{display:inline-flex;flex-direction:column;align-items:stretch;text-align:center;margin:.5rem 0;justify-content:center}.numerator[data-astro-cid-ri6qmbkg]{border-bottom:1px solid var(--foreground)}.divider[data-astro-cid-ri6qmbkg]{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+</style></head> <body> <script>
+		(function() {
+			// Duplicate of theme.ts
+			function getCurrentTheme() {
+				if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+					return localStorage.getItem("theme");
+				}
+	
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					return "dark";
+				}
+				return "light";
+			}
+			
+			console.log("Activating theme...");
+			const theme = getCurrentTheme();
+			const element = document.documentElement;
+			element.classList.toggle("dark", theme === "dark");
+		}());
+	</script>     <nav data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>&larr; back home</a> </nav> <main data-astro-cid-egg7nqdx>  <article class="article" data-astro-cid-egg7nqdx> <h1 data-astro-cid-egg7nqdx>Resize a window in WinUI (part 0: what is DPI)</h1> 
+<p>I’ve been working on a WinUI 3 app, and I’ve been trying to use the WinAppSDK resizing APIs, like <a href="https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveandresize?view=windows-app-sdk-1.7"><code>AppWindow.MoveAndResize</code></a>. Simple APIs!</p>
+<p>Unfortunately, on my high-DPI monitor, these APIs make my window <strong>smaller</strong> than I expect — 400px in <em>XAML</em> seems to be larger than 400px in these <code>AppWindow</code> APIs.</p>
+<figure class="image_figure"><p><img src="/_astro/wrong-size.Cq1KRm_A_ZE7GR4.webp" alt="A 400 by 400 square and a much-smaller 400 by 400 window" width="1282" height="811" loading="lazy" decoding="async">
+<figcaption>These are… both… 400×400?</figcaption></p></figure>
+<p>It turns out these APIs use <strong>physical pixels</strong> (raw pixels), whereas most WinUI &amp; UWP sizes are in something called <a href="https://learn.microsoft.com/en-us/windows/win32/learnwin32/dpi-and-device-independent-pixels"><strong>device-independent pixels</strong></a> (which scale based on screen size &amp; DPI). So on high-DPI monitors, windows will be smaller than expected:</p>
+<pre class="astro-code gruvbox-dark-hard" style="background-color:#1d2021;color:#ebdbb2;overflow-x:auto" tabindex="0" data-language="csharp"><code><span class="line"><span style="color:#FE8019">public</span><span style="color:#FE8019"> sealed</span><span style="color:#FE8019"> partial</span><span style="color:#FE8019"> class</span><span style="color:#FABD2F"> MainWindow</span><span style="color:#A89984"> :</span><span style="color:#FABD2F"> Window</span><span style="color:#A89984"> {</span></span>
+<span class="line"><span style="color:#FE8019">    public</span><span style="color:#B8BB26"> MainWindow</span><span style="color:#A89984">()</span><span style="color:#A89984"> {</span></span>
+<span class="line"><span style="color:#B8BB26">        InitializeComponent</span><span style="color:#A89984">();</span><span style="color:#928374;font-style:italic"> // ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">        // These numbers are physical pixels, whereas most other</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">        // pixels in WinAppSDK are device-independent pixels.</span></span>
+<span class="line"><span style="color:#83A598">        this</span><span style="color:#A89984">.</span><span style="color:#83A598">AppWindow</span><span style="color:#A89984">.</span><span style="color:#B8BB26">MoveAndResize</span><span style="color:#A89984">(</span><span style="color:#8EC07C">new</span><span style="color:#FABD2F"> RectInt32</span><span style="color:#A89984">()</span><span style="color:#A89984"> {</span></span>
+<span class="line"><span style="color:#8EC07C">            Height</span><span style="color:#8EC07C"> =</span><span style="color:#D3869B"> 800</span><span style="color:#A89984">,</span></span>
+<span class="line"><span style="color:#8EC07C">            Width</span><span style="color:#8EC07C"> =</span><span style="color:#D3869B"> 600</span><span style="color:#A89984">,</span></span>
+<span class="line"><span style="color:#8EC07C">            X</span><span style="color:#8EC07C"> =</span><span style="color:#D3869B"> 0</span><span style="color:#A89984">,</span></span>
+<span class="line"><span style="color:#8EC07C">            Y</span><span style="color:#8EC07C"> =</span><span style="color:#D3869B"> 0</span></span>
+<span class="line"><span style="color:#A89984">        });</span></span>
+<span class="line"><span style="color:#A89984">    }</span></span>
+<span class="line"><span style="color:#A89984">}</span></span></code></pre>
+<p>To handle this, we’ll need to adjust these numbers based on the current monitor’s DPI. But to do that, we need to understand DPI.</p>
+<aside><p>Note: I work at Microsoft, but this work is unaffiliated.</p></aside>
+<h2 id="a-brief-history-of-dpi-in-windows">A brief history of DPI in Windows</h2>
+<p>First, let’s quickly explain DPI. The story begins on MSDN, <a href="https://learn.microsoft.com/en-us/windows/win32/learnwin32/dpi-and-device-independent-pixels">DPI and device-independent pixels</a>:</p>
+<p>For years, monitors almost always had ~96 <strong>physical pixels</strong> per inch (PPI), or, using the printing term, “dot”, <strong>96 dots per inch</strong> (<strong>DPI</strong>). Analagously, typesetters divide inches into 72 <strong>points</strong> per inch; so, excluding small <a href="https://m2.material.io/design/typography/understanding-typography.html#:~:text=Ascenders%20and%20descenders">ascenders &amp; descenders</a> which exceed this space, Windows could assume a 12pt font gets 16px:</p>
+<blockquote>
+<div class="equation"><strong>12pt</strong> × <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>1 inch</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>72 pt</span> </div> × 96 <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>px</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>inch</span> </div> = <strong>16px</strong></div>
+</blockquote>
+<p>This worked well — until high-DPI monitors became common. The “96 DPI” assumption became wildly wrong (<a href="https://www.sven.de/dpi/">for example</a>: a 27″ 4K monitor is ~160 PPI, and an iPhone 16 is 460 PPI). If you don’t scale your UI appropriately, everything becomes tiny!</p>
+
+<figure><picture> <source srcset="/_astro/96dpi-assumption-dark.D0r0YxGt_ZdVwvz.webp 600w, /_astro/96dpi-assumption-dark.D0r0YxGt_Z219hcV.webp 1200w" type="image/webp">  <img src="/_astro/96dpi-assumption-dark.D0r0YxGt_Z1zowQh.png" srcset="/_astro/96dpi-assumption-dark.D0r0YxGt_Z1zowQh.png 600w, /_astro/96dpi-assumption-dark.D0r0YxGt_Z1zowQh.png 1200w" alt="The word 'By' written at 3 simulated PPIs" width="600" height="226" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/96dpi-assumption.DcoCmgcG_Z1c5CEk.webp 600w, /_astro/96dpi-assumption.DcoCmgcG_1z1Agr.webp 1200w" type="image/webp">  <img src="/_astro/96dpi-assumption.DcoCmgcG_1bGeHO.png" srcset="/_astro/96dpi-assumption.DcoCmgcG_1bGeHO.png 600w, /_astro/96dpi-assumption.DcoCmgcG_1bGeHO.png 1200w" alt="The word 'By' written at 3 simulated PPIs" width="600" height="226" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture><figcaption>96 DPI text looks tiny if pixels are tiny</figcaption></figure>
+<p>To remedy this, Microsoft made Windows’ DPI adjustable. For example, you could set it to <strong>192 DPI</strong>:</p>
+<blockquote>
+<div class="equation">12pt × <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>1 inch</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>72 pt</span> </div> × <strong>192</strong> <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>px</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>inch</span> </div> = <strong>32px</strong></div>
+</blockquote>
+<p>(And, since you can adjust “DPI” to anything, unrelated to actual <em>physical pixels</em> per inch, Windows calls this <strong>logical DPI</strong>, or dots per <strong>logical inch</strong>. For the rest of this article, “DPI” and “logical DPI” refer to this adjustable DPI setting, and “PPI” refers to physical pixels per inch).</p>
+
+<figure><picture> <source srcset="/_astro/scaled-dpi-dark.DsImV6Il_Z2nloaG.webp 600w, /_astro/scaled-dpi-dark.DsImV6Il_iUxOb.webp 1200w" type="image/webp">  <img src="/_astro/scaled-dpi-dark.DsImV6Il_XtiDY.png" srcset="/_astro/scaled-dpi-dark.DsImV6Il_XtiDY.png 600w, /_astro/scaled-dpi-dark.DsImV6Il_XtiDY.png 1200w" alt="The word 'By' written at the same scale under 3 different DPIs" width="600" height="226" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/scaled-dpi.BXr3f8-s_ZQBQxW.webp 600w, /_astro/scaled-dpi.BXr3f8-s_10kbND.webp 1200w" type="image/webp">  <img src="/_astro/scaled-dpi.BXr3f8-s_3BYRc.png" srcset="/_astro/scaled-dpi.BXr3f8-s_3BYRc.png 600w, /_astro/scaled-dpi.BXr3f8-s_3BYRc.png 1200w" alt="The word 'By' written at the same scale under 3 different DPIs" width="600" height="226" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture><figcaption>Variable-DPI text can handle tiny pixels</figcaption></figure>
+<p>For another writeup, Colin Finck has a great overview of DPI on Windows in <a href="https://building.enlyze.com/posts/writing-win32-apps-like-its-2020-part-3/">Writing Win32 apps like it’s 2020</a>.</p>
+<h2 id="dpi-awareness-how-apps-handle-dpi">DPI-awareness: how apps handle DPI</h2>
+<p>This change on its own does nothing — apps must <em>handle</em> the new DPI by scaling their UI. While this has evolved across Windows 7, 8.1, 10, and 11 (see Colin’s blog above and <a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows?redirectedfrom=MSDN">High DPI Desktop Application Development on Windows</a> and <a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/high-dpi-improvements-for-desktop-applications">Mixed-Mode DPI Scaling and DPI-aware APIs</a>), <em>basically</em> every window runs in one of 2 modes:</p>
+
+<ol>
+<li>
+<p><strong>DPI-aware</strong>: do it yourself.</p>
+<picture> <source srcset="/_astro/dpi-aware-dark.CueS22bk_1jGnaA.webp 600w, /_astro/dpi-aware-dark.CueS22bk_ZCsE2P.webp 1200w" type="image/webp">  <img src="/_astro/dpi-aware-dark.CueS22bk_7fikY.png" srcset="/_astro/dpi-aware-dark.CueS22bk_7fikY.png 600w, /_astro/dpi-aware-dark.CueS22bk_7fikY.png 1200w" alt="Your app sees real pixels &#38; Windows renderes those pixels" width="600" height="226" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/dpi-aware.Bnxk_q4u_1O6TBs.webp 600w, /_astro/dpi-aware.Bnxk_q4u_2aH5Nc.webp 1200w" type="image/webp">  <img src="/_astro/dpi-aware.Bnxk_q4u_2uW9fe.png" srcset="/_astro/dpi-aware.Bnxk_q4u_2uW9fe.png 600w, /_astro/dpi-aware.Bnxk_q4u_2uW9fe.png 1200w" alt="Your app sees real pixels &#38; Windows renderes those pixels" width="600" height="226" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture>
+<p>Your window sees <strong>physical pixels</strong>. Windows gives you those real pixels, a few APIs to get the DPI, and says “figure it out” (usually; see the sidenote below).</p>
+</li>
+<li>
+<p><strong>DPI-unaware</strong>: Windows does it for you.</p>
+<picture> <source srcset="/_astro/dpi-unaware-dark.DmhidNf9_Z1xJHzH.webp 600w, /_astro/dpi-unaware-dark.DmhidNf9_J3nfC.webp 1200w" type="image/webp">  <img src="/_astro/dpi-unaware-dark.DmhidNf9_P29Mr.png" srcset="/_astro/dpi-unaware-dark.DmhidNf9_P29Mr.png 600w, /_astro/dpi-unaware-dark.DmhidNf9_P29Mr.png 1200w" alt="Your app sees 96 DPI ... which renders to this small image ... &#38; Windows stretches it" width="600" height="226" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/dpi-unaware.7JACpzzR_2iS9JP.webp 600w, /_astro/dpi-unaware.7JACpzzR_Z1KH85i.webp 1200w" type="image/webp">  <img src="/_astro/dpi-unaware.7JACpzzR_neV7N.png" srcset="/_astro/dpi-unaware.7JACpzzR_neV7N.png 600w, /_astro/dpi-unaware.7JACpzzR_neV7N.png 1200w" alt="Your app sees 96 DPI ... which renders to this small image ... &#38; Windows stretches it" width="600" height="226" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture>
+<p>Your window sees <strong>virtualized pixels</strong> (sometimes <a href="https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-physicaltologicalpointforpermonitordpi#remarks">called <strong>logical pixels</strong></a>). Your app thinks Windows is running at its original 96 DPI (defined as <code>USER_DEFAULT_SCREEN_DPI</code>), and Windows <em>stretches</em> everything for you, by a simple <strong>scale factor</strong>. For example:</p>
+<blockquote>
+<div class="equation">scale factor = <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>144 logical DPI</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>96 default DPI</span> </div> = <strong>150%</strong></div>
+</blockquote>
+<p>This stretching is why some older apps, like Group Policy Editor and Device Manager, look blurry on modern devices (although Windows actually does <a href="https://web.archive.org/web/20191016193447/https://blogs.windows.com/windowsdeveloper/2017/05/19/improving-high-dpi-experience-gdi-based-desktop-apps/">some cool hackery</a> to make text render crisper).</p>
+<figure class="image_figure"><p><img src="/_astro/blurry-group-policy-2.CcA5jMt9_Z2bqxAw.webp" alt="A section of Local Group Policy Editor" width="528" height="319" loading="lazy" decoding="async">
+<figcaption>Blurry icons &amp; less-blurry text in the Group Policy app</figcaption></p></figure>
+</li>
+</ol>
+<p>All apps are DPI-<em>un</em>aware by default and need to opt-in to DPI-awareness, but the templates for UWP &amp; WinUI apps do this by default. If you’re writing an app from scratch, you’ll want to <a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/setting-the-default-dpi-awareness-for-a-process">opt-in yourself</a>.</p>
+<aside class="sidenote"><h2 id="dpi-awareness-is-more-complex-than-that">DPI-awareness is more complex than that</h2><p>While it’s not relevant to our scenario, DPI awareness is complicated. For example, you can change this setting for <strong>different contexts</strong> in your app:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:right"></th><th style="text-align:center">Version</th><th>Notes</th></tr></thead><tbody><tr><td style="text-align:right"><strong>Per-process</strong></td><td style="text-align:center">Vista</td><td>see <a href="https://learn.microsoft.com/en-us/windows/win32/api/shellscalingapi/ne-shellscalingapi-process_dpi_awareness"><code>PROCESS_DPI_AWARENESS</code></a></td></tr><tr><td style="text-align:right"><strong>Per-thread</strong> and <strong>top-level window</strong></td><td style="text-align:center">Win10 v1607</td><td>see <a href="https://learn.microsoft.com/en-us/windows/win32/api/windef/ne-windef-dpi_awareness"><code>DPI_AWARENESS</code></a>, <a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/dpi-awareness-context"><code>DPI_AWARENESS_CONTEXT</code></a>, and the <em>Mixed-Mode</em> article above</td></tr><tr><td style="text-align:right"><strong>Per-window</strong></td><td style="text-align:center">Win10 v1803</td><td>see <a href="https://learn.microsoft.com/en-us/windows/win32/api/windef/ne-windef-dpi_hosting_behavior"><code>DPI_HOSTING_BEHAVIOR</code></a></td></tr></tbody></table><p>Furthermore, there are <strong>different <a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows#:~:text=The%20following%20table%20shows%20how%20applications%20will%20render%20under%20different%20scenarios">types of DPI awareness</a></strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:right"></th><th style="text-align:center">Version</th><th>DPI seen?</th><th style="text-align:center">Behavior on DPI change?</th></tr></thead><tbody><tr><td style="text-align:right"><strong>DPI-unaware</strong></td><td style="text-align:center"></td><td>96 DPI</td><td style="text-align:center">stretching</td></tr><tr><td style="text-align:right"><strong>system-DPI–aware</strong></td><td style="text-align:center">Vista</td><td>primary monitor’s DPI at beginning of user session</td><td style="text-align:center">stretching</td></tr><tr><td style="text-align:right"><strong>per-monitor–aware</strong></td><td style="text-align:center">8.1</td><td>DPI of window’s current monitor</td><td style="text-align:center">no stretching; Windows sends an event to top-level HWNDs</td></tr><tr><td style="text-align:right"><strong>per-monitor–aware V2</strong></td><td style="text-align:center">Win10 v1703</td><td>DPI of window’s current monitor</td><td style="text-align:center">no stretching; Windows sends an event to <em>all</em> HWNDs (+ some other stuff)</td></tr></tbody></table><p>In most modern apps, you’ll opt-in <strong>your whole process</strong> to <strong>per-monitor–aware V2</strong>, so all Win32 APIs will always return physical pixels.</p></aside>
+<h2 id="device-independent-pixels-dips-frameworks-add-another-layer">Device-Independent Pixels (DIPs): frameworks add another layer</h2>
+<p>But we’re not done yet.</p>
+<p>The <em>Win32</em> APIs might provide physical pixels in your WinUI app, but the <em>WinUI</em> APIs typically won’t.</p>
+<p>Newer frameworks (like UWP, WinUI, Win2D) are designed to be device-independent — and handle DPI scaling automatically. Within the frameworks, you work with <strong>device-independent pixels</strong> (<strong>DIPs</strong>, a.k.a <strong>effective pixels</strong> or <strong>view pixels</strong>), and the frameworks automatically scale them to physical pixel units.</p>
+<p>These DIPs behave similarly to virtualized pixels in DPI-<em>unaware</em> apps: your app sees the world as though there are <strong>96 DIPs per logical inch</strong> and the framework applies the <strong>scale factor</strong> for you. Remember, scale factor is:</p>
+<blockquote>
+<div class="equation">scale factor = <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>logical DPI</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>default DPI</span> </div> = <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>logical DPI</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>96</span> </div> </div>
+</blockquote>
+<p>So (as described in <a href="https://learn.microsoft.com/en-us/windows/apps/develop/win2d/dpi-and-dips">DPI and DIPs</a>):</p>
+<blockquote>
+<div class="equation">physical pixels = DIPs × scale factor = DIPs × <div class="fraction" data-astro-cid-ri6qmbkg> <span class="numerator" data-astro-cid-ri6qmbkg>logical DPI</span> <span class="divider" data-astro-cid-ri6qmbkg>over</span> <span class="denominator" data-astro-cid-ri6qmbkg>96</span> </div></div>
+</blockquote>
+
+<p>But, since the <em>framework</em> does this math <em>before rendering</em> (instead of stretching it afterward, like Windows would), it’s able to do so without making anything blurry.</p>
+
+<picture> <source srcset="/_astro/framework-dpi-dark.B9ygyN9N_Z2ezQam.webp 600w, /_astro/framework-dpi-dark.B9ygyN9N_rO96L.webp 1200w" type="image/webp">  <img src="/_astro/framework-dpi-dark.B9ygyN9N_11PSj0.png" srcset="/_astro/framework-dpi-dark.B9ygyN9N_11PSj0.png 600w, /_astro/framework-dpi-dark.B9ygyN9N_11PSj0.png 1200w" alt="Your app sees 96 DIPs per inch ... the framework scales it ... &#38; Windows renders those pixels" width="600" height="226" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/framework-dpi.B1GsO0us_ZX5Fek.webp 600w, /_astro/framework-dpi.B1GsO0us_1Qep7C.webp 1200w" type="image/webp">  <img src="/_astro/framework-dpi.B1GsO0us_1LDsne.png" srcset="/_astro/framework-dpi.B1GsO0us_1LDsne.png 600w, /_astro/framework-dpi.B1GsO0us_1LDsne.png 1200w" alt="Your app sees 96 DIPs per inch ... the framework scales it ... &#38; Windows renders those pixels" width="600" height="226" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture>
+<p>After Windows 10, that’s more important than ever: Windows’ logical DPI is much less related to physical PPI. Instead, Windows scales logical DPI based on <strong>viewing distance</strong> to make UI text <em>equally legible</em> on all devices.</p>
+
+<figure class="image_figure"><picture> <source srcset="/_astro/legibility-dark.CUeujnBe_ZnX8zG.webp 600w, /_astro/legibility-dark.CUeujnBe_Z21LgpR.webp 1200w" type="image/webp">  <img src="/_astro/legibility-dark.CUeujnBe_Z27kzyW.png" srcset="/_astro/legibility-dark.CUeujnBe_Z27kzyW.png 600w, /_astro/legibility-dark.CUeujnBe_m0AWh.png 1200w" alt="A person sees a tablet, a monitor, and a TV, with text to match the distance from their eyes" width="600" height="216" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/legibility.ByzNnTwV_Fp89K.webp 600w, /_astro/legibility.ByzNnTwV_vuVnv.webp 1200w" type="image/webp">  <img src="/_astro/legibility.ByzNnTwV_1ADYzT.png" srcset="/_astro/legibility.ByzNnTwV_1ADYzT.png 600w, /_astro/legibility.ByzNnTwV_Z1p8hew.png 1200w" alt="A person sees a tablet, a monitor, and a TV, with text to match the distance from their eyes" width="600" height="216" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture><figcaption>Windows scales DPI to make text <em>equally legible</em> across devices</figcaption></figure>
+<p>For example, it might attempt to render “1 inch” (72pt) text very differently on a distant TV versus a nearby phone:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:right"></th><th style="text-align:right">Actual PPI</th><th>Viewing dist.</th><th style="text-align:right">⇒ Potential height</th><th style="text-align:right">Scale factor</th><th style="text-align:right">Logical DPI</th></tr></thead><tbody><tr><td style="text-align:right"><strong>1080p 40″ TV</strong></td><td style="text-align:right">55 PPI</td><td>10 feet</td><td style="text-align:right">4.50″</td><td style="text-align:right">450%</td><td style="text-align:right">432 DPI</td></tr><tr><td style="text-align:right"><strong>1080p 4″ phone</strong></td><td style="text-align:right">550 PPI</td><td>10 inches</td><td style="text-align:right">0.75″</td><td style="text-align:right">75%</td><td style="text-align:right">72 DPI</td></tr></tbody></table>
+<p>An archived blog post, <a href="https://learn.microsoft.com/en-us/archive/blogs/supportingwindows/display-scaling-in-windows-10">Display Scaling in Windows 10</a>, explains this philosophy and compares these scaling approaches.</p>
+<aside class="sidenote"><p>By the way, WinUI recommends (<a href="https://learn.microsoft.com/en-us/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor">Screen sizes and breakpoints</a>) using <strong>multiples of four</strong> when choosing pixel sizes. This makes sense: since most <em>scale factors</em> are increments of 25% (e.g. 125%, 150%, 175%), choosing a multiple of 4 leads to whole-pixel values when the framework renders them. Pixel-perfect!</p></aside>
+<h2 id="conclusion-back-to-our-problem">Conclusion: back to our problem</h2>
+<p>Although AppWindow is a WinAppSDK API, not a Win2D one, the DIP docs state (emphasis added):</p>
+<blockquote>
+<p>In Win2D, whenever you see an API that specifies a position or size using <strong>integer data types</strong> (or a struct such as BitmapSize that contains integers), this means the API is operating <strong>in pixel units</strong>.</p>
+<p>[…]</p>
+<p>In Win2D, whenever you see an API that specifies a position or size using <strong>floating point data types</strong> (or structs such as Vector2 or Size that contain floating point values), this means the API is operating <strong>in DIPs</strong>.</p>
+</blockquote>
+<p>And thus, our issue:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveandresize?view=windows-app-sdk-1.7"><code>AppWindow.MoveAndResize</code></a> uses integer coordinates. Since WinUI apps are DPI-aware, those are in physical pixel units.</li>
+<li>The rest of our app uses device-independent pixel units.</li>
+</ul>
+<p>So if we want our app to be the right size, <strong>we need to DPI-scale the pixels manually</strong>.
+Part 1 coming soon!</p>
+
+<hr/>
+<p><em>Thanks to Ari Krumbein, Raymond Chen, &amp; Atherai Maran for editing.</em></p>
+<hr/>
+<aside class="sidenote"><h2 id="appendix-glossary">Appendix: glossary</h2><dl><dt>device-independent pixel (DIP)</dt><dd>(aka <em>effective pixel</em>, <em>layout pixel</em>, or <em>view pixel</em>)</dd><dd>The pixel unit used in modern frameworks like WinUI &amp; Win2D. Calculated identically to <em>virtualized pixels</em>, except the framework does the scaling before rendering, so the results are not blurry.</dd><dt>dot</dt><dd>See <em>DPI</em>.</dd><dt>DPI</dt><dd>&quot;<em>Dots</em> Per Inch&quot;, <a href="https://en.wikipedia.org/wiki/Dots_per_inch">a printing term</a>; how many literal dots can be printed in a physical inch.</dd><dd>In computing, how many <em>physical pixels</em> are in one inch or <em>logical inch</em>. Windows historically assumed 96 DPI. Compare with <em>PPI</em>. See <em>logical DPI</em>.</dd><dt>DPI-awareness</dt><dd>A setting that controls what pixel unit Windows provides a given window. DPI-aware windows use <em>physical pixels</em>, while DPI-unaware windows use <em>virtualized pixels</em>. This has several subtypes, most importantly “per-monitor–aware V2”.</dd><dt>effective pixel</dt><dd>See <em>device-independent pixel</em>.</dd><dt>hardware pixel</dt><dd>See <em>physical pixel</em>.</dd><dt>layout pixel</dt><dd>See <em>device-independent pixel</em>.</dd><dt>logical DPI</dt><dd>Windows’ name for its adjustable DPI setting; since its value is arbitrary, it may not correspond to <em>physical inches</em>, instead it uses <em>logical inches</em>. </dd><dd>The numerator in the <em>scale factor</em> equation.</dd><dt>logical inch</dt><dd>An abstract measurement: whatever physical length on a monitor corresponds to 72 <em>points</em> after the UI has been scaled. If <em>scale factor</em> is 100%, then this is equivalent to a <em>physical inch</em>. Compare with <em>physical inch</em>. See <em>logical DPI</em>.</dd><dt>logical pixel</dt><dd>See <em>virtualized pixel</em>.</dd><dt>physical inch</dt><dd>A real, measurable inch. Compare with <em>logical inch</em>.</dd><dt>physical pixel</dt><dd>(aka <em>hardware pixel</em> or <em>raw pixel</em>)</dd><dd>The small RGB lights that form an on-screen &quot;dot&quot;; real, raw, actual hardware pixels.</dd><dd>The pixel unit used by DPI-aware apps. Compare with <em>virtualized pixel</em> and <em>device-independent pixel</em>.</dd><dt>pixel</dt><dd>See <em>physical pixel</em>, <em>virtualized pixel</em>, and <em>device-independent pixel</em>.</dd><dt>point</dt><dd><a href="https://en.wikipedia.org/wiki/Point_(typography)">A typography term</a>; there are typically 72 points in a <em>physical inch</em>.</dd><dt>PPI</dt><dd>“Pixels Per Inch”, the number of <em>physical pixels</em> in one <em>physical inch</em>.</dd><dt>raw pixel</dt><dd>See <em>physical pixel</em>.</dd><dt>scale factor</dt><dd>The percentage that Windows stretches (&quot;scales&quot;) <em>virtualized pixels</em> by to handle arbitrary <em>logical DPIs</em>.</dd><dd>The current <em>logical DPI</em> divided by the default system DPI (which is always 96).</dd><dt>view pixel</dt><dd>See <em>device-independent pixel</em>.</dd><dt>virtualized pixel</dt><dd>(aka <em>logical pixel</em>)</dd><dd>The pixel unit used by non–DPI-aware apps (or by older DPI-aware apps in special circumstances; see <em>DPI-awareness is more complex than that</em>, above). Windows will stretch these pixels by multiplying them by the current <em>scale factor</em>. The result will be blurry. Compare with <em>physical pixel</em> and <em>device-independent pixel</em>.</dd><dd>A <em>physical pixel</em> divided by the current <em>scale factor</em>.</dd></dl></aside> </article> <hr data-astro-cid-egg7nqdx> <aside data-astro-cid-egg7nqdx> <nav class="bottom_nav" data-astro-cid-egg7nqdx> <a class="prev" href="/posts/tiktok_will_always_be_temporary/" data-astro-cid-egg7nqdx>&larr; TikTok will always be temporary</a>  </nav> <span class="print-only" data-astro-cid-egg7nqdx> <a href="https://ben.stolovitz.com/" data-astro-cid-egg7nqdx>ben.stolovitz.com</a> //
+</span> 
+Published
+<time datetime="2025-05-05T00:00:00.000Z" data-astro-cid-egg7nqdx> May 5, 2025 </time>   </aside> </main>   <menu data-astro-cid-egg7nqdx> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="fFwL3" component-url="/_astro/ThemeButton.DLzJdG7X.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;data-astro-cid-egg7nqdx&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}"></astro-island> </menu>  </body></html>
