@@ -1,0 +1,2273 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN0HVXBFN4"></script><script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'G-ZN0HVXBFN4');
+	</script><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v5.5.5"><title>What&#39;s in an (accessible) name? - Ben Stolovitz</title><meta name="description" content="Most UI has good accessible names by default. But when do you need to write your own? And how?"><link rel="canonical" href="https://ben.stolovitz.com/posts/whats_in_an_accessible_name/"><meta property="og:url" content="https://ben.stolovitz.com/posts/whats_in_an_accessible_name/"><meta property="og:type" content="article"><meta property="og:title" content="What's in an (accessible) name?"><meta property="og:description" content="Most UI has good accessible names by default. But when do you need to write your own? And how?"><meta property="og:sitename" content="ben.stolovitz.com"><meta property="og:image" content="/_astro/whats-in-an-accessible-name-og.TCEa4gBJ_9nh2n.png"><meta property="og:image:alt" content="A forlorn robot wearing a dinosaur T-shirt stands on a balcony pondering a rose"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="article:published_time" content="2025-08-17T00:00:00.000Z"><meta property="article:author" content="Ben Stolovitz"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="ben.stolovitz.com"><meta property="twitter:url" content="https://ben.stolovitz.com/posts/whats_in_an_accessible_name/"><meta name="twitter:title" content="What's in an (accessible) name?"><meta name="twitter:description" content="Most UI has good accessible names by default. But when do you need to write your own? And how?"><meta name="twitter:image" content="/_astro/whats-in-an-accessible-name-og.TCEa4gBJ_9nh2n.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css"><link rel="stylesheet" href="/_astro/_path_.DG2XDEqx.css">
+<style>@charset "UTF-8";.article aside{background-color:var(--aside-background);padding:.5rem 1rem;margin-left:2rem;font-size:.9rem;border-radius:var(--big-corner)}@media print{.article aside{border:1px solid var(--chart-tick-foreground);background-color:transparent}}.article aside p:first-child,.article aside h1:first-child,.article aside h2:first-child,.article aside h3:first-child,.article aside h4:first-child,.article aside h5:first-child{margin-top:0}.article aside>p:last-child{margin-bottom:0}.article .appendix{background-color:var(--aside-background);padding:.5rem 1rem;font-size:.9rem;border-radius:var(--big-corner)}@media print{.article .appendix{border:1px solid var(--chart-tick-foreground);background-color:transparent}}.article .appendix+.appendix{margin-top:1rem}.article .appendix h1,.article .appendix h2,.article .appendix h3,.article .appendix h4,.article .appendix h5{margin-top:.5rem}.article button,.article input[type=submit]{appearance:none;padding:.5rem;border-radius:1rem;background:var(--table-alternate-background);color:inherit;border:0;cursor:pointer}.article button:hover,.article button:focus,.article input[type=submit]:hover,.article input[type=submit]:focus{background:var(--link);color:var(--background)}.article blockquote{margin:0;margin-left:1.5rem}.article blockquote .source{display:block;text-align:right;margin-right:1rem;font-size:.8rem;clear:both;color:var(--code-foreground)}.article blockquote .source:before{content:"— "}.article .equation{display:flex;align-items:center;gap:.2rem}.article figure{margin:0 auto;text-align:center;font-size:.8rem}.article figure.image_figure{max-width:80%}@media print{.article figure.image_figure{max-width:50%}}.article figure p{margin:0}.article figure figcaption{color:var(--code-foreground)}.article figure img{border-radius:var(--big-corner)}.article li>p+.image_figure{margin-top:1rem}.article .deemphasized{color:var(--code-foreground)}.article table td,.article table th{padding:.2rem}.article table tr:nth-child(2n){background:var(--table-alternate-background)}.article .key_image{margin:0 auto;max-width:100%}.article img{max-width:90%;height:auto}body{display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start}main[data-astro-cid-egg7nqdx]{max-width:38rem;width:100%}@media print{main[data-astro-cid-egg7nqdx]{max-width:8in}}aside[data-astro-cid-egg7nqdx]{font-size:.8rem;text-align:center}.bottom_nav[data-astro-cid-egg7nqdx]{display:flex;margin-bottom:1rem;justify-content:space-between;gap:1rem}.bottom_nav[data-astro-cid-egg7nqdx] .prev[data-astro-cid-egg7nqdx]{grid-column:prev/span 1}.bottom_nav[data-astro-cid-egg7nqdx] .next[data-astro-cid-egg7nqdx]{grid-column:next/span 1}@media print{.bottom_nav[data-astro-cid-egg7nqdx]{display:none}}h1[data-astro-cid-egg7nqdx]{font-size:1.4rem}nav[data-astro-cid-egg7nqdx]{margin-top:1.5rem}@media print{nav[data-astro-cid-egg7nqdx]{display:none}}
+._volumeSimulator_2iv9s_1{text-align:center;background-color:var(--aside-background);padding:1rem;border-radius:var(--big-corner);position:relative;display:flex;gap:1rem;flex-direction:column}@media print{._volumeSimulator_2iv9s_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._volumeStatus_2iv9s_18{display:grid;grid-template-columns:1fr [output] max-content [sound] 1fr}._playing_2iv9s_23{grid-column:sound;text-align:right}._volumeOutput_2iv9s_28{background:var(--gruv-bg);color:var(--gruv-fg);border-radius:var(--small-corner);padding:.2rem .5rem;margin:0;grid-column:output;text-align:left;min-width:12rem}._volumeOutput_2iv9s_28 span{overflow:hidden}@media print{._volumeOutput_2iv9s_28{background:transparent;color:var(--foreground)}}._placeholder_2iv9s_48{opacity:.5}._volumeButton_2iv9s_52._volumeButton_2iv9s_52{padding:2rem;border-radius:var(--small-corner);background-color:var(--table-alternate-background);font-size:2rem;line-height:.5;border:.1rem solid var(--kbd-border);border-bottom-width:.4rem;cursor:pointer}@media print{._volumeButton_2iv9s_52._volumeButton_2iv9s_52{background:transparent;color:var(--foreground)}}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:hover,._volumeButton_2iv9s_52._volumeButton_2iv9s_52:focus{margin-top:.3rem;border-bottom-width:.1rem}._volumeButton_2iv9s_52._volumeButton_2iv9s_52:active{background-color:var(--link)}._buttonGroup_2iv9s_76{display:flex;justify-content:center;gap:.2rem}._volumeOptions_2iv9s_82{display:flex;flex-direction:column;justify-content:center;align-items:center}
+@keyframes _slideInFromLeft_1hpfe_1{0%{opacity:0}to{opacity:1}}._themeButton_1hpfe_9{appearance:none;padding:.5rem;border-radius:1rem;background:var(--table-alternate-background);border:0;cursor:pointer;position:fixed;top:1.3rem;right:1rem;animation:.3s ease-out 0s 1 _slideInFromLeft_1hpfe_1}._themeButton_1hpfe_9:hover,._themeButton_1hpfe_9:focus{background:var(--link);color:var(--background)}@media print{._themeButton_1hpfe_9{display:none}}
+</style><style>.wrapper[data-astro-cid-tb5vpudz]{width:100%;padding:.5rem 0;margin:1em 0}@media screen and (min-width: 40rem){.wrapper[data-astro-cid-tb5vpudz]{width:150%;max-width:90vw;padding-right:1rem}}
+</style><style>._playground_7r2v3_1{display:flex;flex-wrap:wrap;gap:.5rem;align-items:stretch;margin:0;background-color:var(--aside-background);padding:.5rem;border-radius:var(--big-corner)}@media print{._playground_7r2v3_1{border:1px solid var(--chart-tick-foreground);background-color:transparent}}._editorTabs_7r2v3_18,._frame_7r2v3_19{flex:3;min-width:20rem;max-width:100%;min-height:15rem}._editorTabs_7r2v3_18{flex:4}._tabsSection_7r2v3_30{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between}._title_7r2v3_37{vertical-align:middle}._editor_7r2v3_18{border-radius:var(--small-corner);font-family:Hack,monospace;font-size:.92rem;background-color:var(--gruv-bg)}@media print{._editor_7r2v3_18{font-size:8pt}}._frame_7r2v3_19{position:relative}._iframe_7r2v3_57{border-radius:var(--small-corner);height:100%}@media print{._iframe_7r2v3_57{border:1px solid var(--chart-tick-foreground)}}._error_7r2v3_67{position:absolute;bottom:0;right:0;left:0;background-color:#fb4934;padding:.2rem}._error_7r2v3_67 p{margin:0}
+</style><style>code[class*=language-],pre[class*=language-]{color:var(--color-fg1);direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{color:var(--color-fg0);background:var(--color-bg4)}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{color:var(--color-fg0);background:var(--color-bg4)}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:var(--color-bg0_h)}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.cdata{color:var(--color-gray1)}.token.delimiter,.token.boolean,.token.keyword,.token.selector,.token.important,.token.atrule{color:var(--color-red2)}.token.operator,.token.punctuation,.token.attr-name{color:var(--color-gray1)}.token.tag,.token.tag .punctuation,.token.doctype,.token.builtin{color:var(--color-yellow2)}.token.entity,.token.number,.token.symbol{color:var(--color-purple2)}.token.property,.token.constant,.token.variable{color:var(--color-red2)}.token.string,.token.char{color:var(--color-green2)}.token.attr-value,.token.attr-value .punctuation{color:var(--color-gray1)}.token.url{color:var(--color-green2);text-decoration:underline}.token.function{color:var(--color-yellow2)}.token.regex{background:var(--color-green2)}.token.bold{font-weight:700}.token.italic{font-style:italic}.token.inserted{background:var(--color-gray1)}.token.deleted{background:var(--color-red2)}
+</style><style>.react-tabs{-webkit-tap-highlight-color:transparent}.react-tabs__tab-list{margin:0;padding:0}.react-tabs__tab{display:inline-block;border-bottom:none;bottom:-1px;position:relative;list-style:none;padding:.2rem 1rem;min-width:5rem;text-align:center;cursor:pointer}.react-tabs__tab:hover{background-color:var(--table-alternate-background);border-radius:5px 5px 0 0}.react-tabs__tab--selected{background:var(--gruv-bg);border-color:var(--tab-border-color);color:var(--foreground);border-radius:5px 5px 0 0}.react-tabs__tab--selected:hover{background-color:var(--background)}.react-tabs__tab--disabled{color:var(--code-foreground);cursor:default}.react-tabs__tab:focus{outline:none;background-color:var(--link)}.react-tabs__tab:focus:after{content:"";position:absolute;height:5px;left:-4px;right:-4px;bottom:-5px;background-color:transparent}.react-tabs__tab-panel{display:none}.react-tabs__tab-panel--selected{display:block}
+</style></head> <body> <script>
+		(function() {
+			// Duplicate of theme.ts
+			function getCurrentTheme() {
+				if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+					return localStorage.getItem("theme");
+				}
+	
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					return "dark";
+				}
+				return "light";
+			}
+			
+			console.log("Activating theme...");
+			const theme = getCurrentTheme();
+			const element = document.documentElement;
+			element.classList.toggle("dark", theme === "dark");
+		}());
+	</script>     <nav data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>&larr; back home</a> </nav> <main data-astro-cid-egg7nqdx>  <article class="article" data-astro-cid-egg7nqdx> <h1 data-astro-cid-egg7nqdx>What&#39;s in an (accessible) name?</h1> <p>Everything in an (accessible) UI needs an <strong>(accessible) name</strong>. For most controls, that’s automatic—<strong>they’ll have a good one by default</strong>. But sometimes you’ll need to specify one manually.</p>
+
+<picture> <source srcset="/_astro/whats-in-an-accessible-name-dark.dPgkQJrs_ZzdJ7Q.webp 300w, /_astro/whats-in-an-accessible-name-dark.dPgkQJrs_153QsD.webp 600w, /_astro/whats-in-an-accessible-name-dark.dPgkQJrs_Z29e2kx.webp 1000w" type="image/webp">  <img src="/_astro/whats-in-an-accessible-name-dark.dPgkQJrs_Zy9P8j.png" srcset="/_astro/whats-in-an-accessible-name-dark.dPgkQJrs_Zy9P8j.png 300w, /_astro/whats-in-an-accessible-name-dark.dPgkQJrs_167Ksb.png 600w, /_astro/whats-in-an-accessible-name-dark.dPgkQJrs_Zy9P8j.png 1000w" alt="A forlorn robot wearing a dinosaur T-shirt stands on a balcony pondering a rose" width="300" height="327" loading="lazy" decoding="async" class="key_image light-hidden"> </picture> <picture> <source srcset="/_astro/whats-in-an-accessible-name.DW5p55gP_Z1xMYXj.webp 300w, /_astro/whats-in-an-accessible-name.DW5p55gP_1i34QA.webp 600w, /_astro/whats-in-an-accessible-name.DW5p55gP_Z1QjLGP.webp 1000w" type="image/webp">  <img src="/_astro/whats-in-an-accessible-name.DW5p55gP_9VOTK.png" srcset="/_astro/whats-in-an-accessible-name.DW5p55gP_9VOTK.png 300w, /_astro/whats-in-an-accessible-name.DW5p55gP_Z24oe4h.png 600w, /_astro/whats-in-an-accessible-name.DW5p55gP_9VOTK.png 1000w" alt="A forlorn robot wearing a dinosaur T-shirt stands on a balcony pondering a rose" width="300" height="327" loading="lazy" decoding="async" class="key_image dark-hidden"> </picture>
+<p>Let’s walk through <strong>how to use accessible names</strong> (and accessible descriptions!) in your UI. For example, you’ll know to name this button <code>Visit DinoPark</code>—and to put other content into the description instead:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value=="object"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event("astro:visible"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZDcEUE" prefix="r0" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;🤔 What should the name be?&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!-- Should it be \&quot;Visit DinoPark\&quot;? --&gt;\r\n&lt;button title=\&quot;Visit DinoPark\&quot;&gt;\r\n    &lt;!-- \r\n      Should it be \&quot;Suaropod\&quot;?\r\n      (note: this is the default; why? Is it correct?) \r\n     --&gt;\r\n    🦕\r\n&lt;/button&gt;\r\n\r\n&lt;!-- Should it be \&quot;Start your DinoPark visit today\&quot;? --&gt;\r\n&lt;small&gt;Start your DinoPark visit today&lt;/small&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">🤔 What should the name be?</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r0R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r0R3:0" tabindex="0" data-rttab="true">HTML</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r0R3:0" aria-labelledby="tab:r0R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!-- Should it be "Visit DinoPark"? --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Visit DinoPark<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 
+      Should it be "Suaropod"?
+      (note: this is the default; why? Is it correct?) 
+     --></span>
+    🦕
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Should it be "Start your DinoPark visit today"? --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">></span></span>Start your DinoPark visit today<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!-- Should it be &quot;Visit DinoPark&quot;? --&gt;
+&lt;button title=&quot;Visit DinoPark&quot;&gt;
+    &lt;!-- 
+      Should it be &quot;Suaropod&quot;?
+      (note: this is the default; why? Is it correct?) 
+     --&gt;
+    🦕
+&lt;/button&gt;
+
+&lt;!-- Should it be &quot;Start your DinoPark visit today&quot;? --&gt;
+&lt;small&gt;Start your DinoPark visit today&lt;/small&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;🤔 What should the name be?&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!-- Should it be &quot;Visit DinoPark&quot;? --&gt;
+&lt;button title=&quot;Visit DinoPark&quot;&gt;
+    &lt;!-- 
+      Should it be &quot;Suaropod&quot;?
+      (note: this is the default; why? Is it correct?) 
+     --&gt;
+    🦕
+&lt;/button&gt;
+
+&lt;!-- Should it be &quot;Start your DinoPark visit today&quot;? --&gt;
+&lt;small&gt;Start your DinoPark visit today&lt;/small&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r0R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r0R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="what-is-an-accessible-name-and-accessible-description">What is an “accessible name” and “accessible description”?</h2>
+<p>Briefly: beyond their internal <strong>visual tree</strong> of controls &amp; their children, most UI frameworks expose a <strong>programmatic</strong> one called the <a href="https://web.dev/articles/the-accessibility-tree"><strong>accessibility tree</strong></a>. <abbr title="Assistive Technologies">ATs</abbr> (like screen readers) can read this accessibility tree using standardized APIs (like <a href="https://learn.microsoft.com/en-us/windows/win32/winauto/entry-uiauto-win32">UIA</a> on Windows, <a href="https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html#//apple_ref/doc/uid/TP40001078-CH208-TPXREF101">NSAccessibility</a> on macOS &amp; iOS, <a href="https://wiki.linuxfoundation.org/accessibility/atk/at-spi/start">ATK/​AT-SPI</a> on Android &amp; Linux, and <a href="https://www.w3.org/WAI/standards-guidelines/aria/">ARIA</a>—which <a href="https://www.w3.org/TR/core-aam-1.2/">browsers translate</a> into the other APIs — on the web).</p>
+
+<p>As devs building accessible UI, we decide:</p>
+<ol>
+<li>Which controls appear in the accessibility tree,</li>
+<li>What properties are set on each control, and</li>
+<li>When to send notifications about changes to these controls &amp; properties.</li>
+</ol>
+<p>The most important of these properties is the control’s <strong>name</strong> (often called its <strong>accessible name</strong> to <a href="https://webaim.org/articles/label-name">distinguish from its visible <em>label</em></a>).</p>
+<p>The <strong>accessible name</strong> is usually the first thing a screen reader announces about a control, whereas other properties (like <strong>accessible description</strong>; we’ll get to it) announce later. For example:</p>
+<blockquote>
+<p><strong>Visit DinoPark</strong>, button, start your DinoPark visit today</p>
+</blockquote>
+<p>It’s the first thing screen reader users hear, so a good accessible name is important.</p>
+<h2 id="accessible-names-are-usually-correctby-default">Accessible names are usually correct — by default</h2>
+<p>But by default, most controls <strong>already have good accessible names</strong>.</p>
+<p>UI frameworks vary, but usually they’ll automatically name controls based on visible content: a button with the label “Edit” will be named <code>Edit</code>, a textbox labelled “First name” will be named <code>First name</code>, etc. WinUI controls <a href="https://learn.microsoft.com/en-us/windows/apps/design/accessibility/basic-accessibility-information#name-from-inner-text">automatically generate names for themselves</a> in most cases, <a href="https://developer.apple.com/documentation/swiftui/view-accessibility#:~:text=The%20framework%20introspects%20common%20elements%20like%20navigation%20views%2C%20lists%2C%20text%20fields%2C%20sliders%2C%20buttons%2C%20and%20so%20on%2C%20and%20provides%20basic%20accessibility%20labels%20and%20values%20by%20default.">as do SwiftUI controls</a>, <a href="https://www.w3.org/TR/accname/#mapping_additional_nd_te">as does web content</a>.</p>
+<p>It’s truly rare to need a custom name. For example, these are all correct:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z1oACAv" prefix="r1" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ These are all good&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;h1&gt;🦕 DinoPark guest registration&lt;/h1&gt;\r\n\r\n&lt;!-- Works! --&gt;\r\n&lt;label for=\&quot;first-name\&quot;&gt;First name&lt;/label&gt;\r\n&lt;input id=\&quot;first-name\&quot; /&gt;\r\n\r\n&lt;!-- Also works! --&gt;\r\n&lt;label&gt;\r\n    Last name\r\n    &lt;input /&gt;\r\n&lt;/label&gt;\r\n\r\n&lt;!-- Discouraged because it&#39;ll disappear visually when you type, but name is good --&gt;\r\n&lt;input placeholder=\&quot;Social Security number\&quot; /&gt;\r\n\r\n&lt;!-- Yup! --&gt;\r\n&lt;input type=\&quot;submit\&quot; /&gt;\r\n\r\n&lt;!-- A bit long, but, yup, works! --&gt;\r\n&lt;button&gt;\r\n    Learn about our &lt;b&gt;safe&lt;/b&gt; dinosaur revival process\r\n&lt;/button&gt;&quot;],&quot;css&quot;:[0,&quot;body {\r\n    margin: 0 1em;\r\n    align-items: flex-start;\r\n}\r\n\r\nh1 {\r\n    font-size: 1.2em;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ These are all good</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r1R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r1R3:0" tabindex="0" data-rttab="true">HTML</li><li class="react-tabs__tab" role="tab" id="tab:r1R3:1" aria-selected="false" aria-disabled="false" aria-controls="panel:r1R3:1" data-rttab="true">CSS</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r1R3:0" aria-labelledby="tab:r1R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>🦕 DinoPark guest registration<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Works! --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>First name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first-name<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token comment">&lt;!-- Also works! --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>
+    Last name
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Discouraged because it'll disappear visually when you type, but name is good --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Social Security number<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token comment">&lt;!-- Yup! --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token comment">&lt;!-- A bit long, but, yup, works! --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>
+    Learn about our <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>safe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span> dinosaur revival process
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;h1&gt;🦕 DinoPark guest registration&lt;/h1&gt;
+
+&lt;!-- Works! --&gt;
+&lt;label for=&quot;first-name&quot;&gt;First name&lt;/label&gt;
+&lt;input id=&quot;first-name&quot; /&gt;
+
+&lt;!-- Also works! --&gt;
+&lt;label&gt;
+    Last name
+    &lt;input /&gt;
+&lt;/label&gt;
+
+&lt;!-- Discouraged because it&#x27;ll disappear visually when you type, but name is good --&gt;
+&lt;input placeholder=&quot;Social Security number&quot; /&gt;
+
+&lt;!-- Yup! --&gt;
+&lt;input type=&quot;submit&quot; /&gt;
+
+&lt;!-- A bit long, but, yup, works! --&gt;
+&lt;button&gt;
+    Learn about our &lt;b&gt;safe&lt;/b&gt; dinosaur revival process
+&lt;/button&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r1R3:1" aria-labelledby="tab:r1R3:1"></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ These are all good&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;body {
+    margin: 0 1em;
+    align-items: flex-start;
+}
+
+h1 {
+    font-size: 1.2em;
+}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;🦕 DinoPark guest registration&lt;/h1&gt;
+
+&lt;!-- Works! --&gt;
+&lt;label for=&quot;first-name&quot;&gt;First name&lt;/label&gt;
+&lt;input id=&quot;first-name&quot; /&gt;
+
+&lt;!-- Also works! --&gt;
+&lt;label&gt;
+    Last name
+    &lt;input /&gt;
+&lt;/label&gt;
+
+&lt;!-- Discouraged because it&#x27;ll disappear visually when you type, but name is good --&gt;
+&lt;input placeholder=&quot;Social Security number&quot; /&gt;
+
+&lt;!-- Yup! --&gt;
+&lt;input type=&quot;submit&quot; /&gt;
+
+&lt;!-- A bit long, but, yup, works! --&gt;
+&lt;button&gt;
+    Learn about our &lt;b&gt;safe&lt;/b&gt; dinosaur revival process
+&lt;/button&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r1R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r1R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="when-do-i-need-a-custom-accessible-name">When do I need a custom accessible name?</h2>
+<p>In fact, I usually only use explicit names in a few circumstances:</p>
+<ul>
+<li><strong>With images &amp; icons</strong> - if I’m using an image or emoji as an icon, I’ll need a custom name to make it accessible to screen reader users.</li>
+<li><strong>With messed-up UI</strong> - if I’m trying to fix already-written UI that didn’t follow other accessibility guidelines. For a good example, see the classic article <a href="https://www.tpgi.com/html5-accessibility-chops-just-use-a-button/">Just use a (native HTML) button</a>.</li>
+<li><strong>With framework limitations</strong> - if I’m handling a well-known limitation in a UI framework. For example, WinUI struggles generating names for buttons that contain <code>StackPanel</code>s.</li>
+<li><strong>With groups of UI</strong> - if I’m trying to delineate groups of UI, I can name the container to create a <strong>context</strong>. This is worth an article all by itself.</li>
+</ul>
+<p>And, in rare cases:</p>
+<ul>
+<li><strong>When the default name is unclear</strong> - if the default name is ambiguous or is missing vital information.</li>
+</ul>
+<p>What makes a name unclear? Let’s explain.</p>
+<h2 id="what-is-required">What is <em>required</em>?</h2>
+<p>First, let’s discuss what’s <em>required</em> of accessible names.</p>
+<p>You probably rely on <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> for your accessibility requirements (they’re a big part <a href="https://www.microsoft.com/en-us/trust-center/compliance/accessibility#:~:text=Microsoft%20publishes%20Accessibility%20Conformance%20Reports%20%28ACRs%29%20describing%20how,Act%3B%20and%20the%20Web%20Content%20Accessibility%20Guidelines%20%28WCAG%29.">of what my work uses</a>), but they’re surprisingly terse about names. Here’s what they require:</p>
+<ul>
+<li>
+<p><a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html"><strong>WCAG 4.1.2 - Name, Role, Value</strong></a>: among other things, every control <strong>must have a name</strong> that can be determined accessibly. Emphasis added:</p>
+<blockquote>
+<p>For all <strong>user interface components</strong> (including but not limited to: form elements, links and components generated by scripts), the <strong>name</strong> and role <strong>can be programmatically determined</strong>; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html"><strong>WCAG 2.5.3 - Label in Name</strong></a>: the accessible name for every control <strong>must contain all visible “label” text</strong>.</p>
+<blockquote>
+<p>For user interface components with labels that include text or images of text, the name contains the text that is presented visually.</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html"><strong>WCAG 1.1.1 - Non-text content</strong></a>: even controls that are <strong>images</strong> must have a useful name.</p>
+<blockquote>
+<p>All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for [some exceptions].</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships"><strong>WCAG 1.3.1 - Info and Relationships</strong></a>: all information must be available in text or programmatically.</p>
+<blockquote>
+<p>Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+</blockquote>
+</li>
+</ul>
+<p>Instead, most WCAG recommendations about accessible names come from separate, non-normative guidance, <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/">Providing Accessible Names and Descriptions</a> (worth reading). They offer 5 “cardinal rules” and several guidelines, but nothing mandatory. This is a signal: good accessible names can’t be chosen merely by following requirements or an algorithm—<strong>they come from deliberate <em>design</em></strong>.</p>
+<p>For example, although both of these buttons are accessibly <em>compliant</em>, they are both poorly designed — even if the issue is only obvious to screen reader users:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="MpF3f" prefix="r2" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;🤔 This is a design problem&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Both of these technically follow all the WCAG rules.\r\n\r\n  They&#39;re both bad design.\r\n--&gt;\r\n\r\n&lt;h2&gt;You wouldn&#39;t do this:&lt;/h2&gt;\r\n&lt;button&gt;\r\n  Pay now\r\n  (your payment of $300 hasn&#39;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)\r\n&lt;/button&gt;\r\n\r\n&lt;h2&gt;So don&#39;t do it with the accessible name:&lt;/h2&gt;\r\n&lt;button\r\n  aria-label=\&quot;Pay now (your payment of $300 hasn&#39;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)\&quot;&gt;\r\n  Pay now\r\n&lt;/button&gt;\r\n&lt;small&gt;\r\n  &lt;p&gt;\r\n    Your payment of $300 hasn&#39;t been submitted yet.\r\n  &lt;/p&gt;\r\n  &lt;p&gt;\r\n    Once you click this button we will bill your bank for the full amount within 7-10 business days.\r\n  &lt;/p&gt;\r\n&lt;/small&gt;&quot;],&quot;css&quot;:[0,&quot;h2 {\r\n  font-size: 1.2em;\r\n  text-align: center;\r\n}\r\n\r\nsmall {\r\n  text-align: center;\r\n  color: var(--secondary);\r\n}\r\n\r\nbutton {\r\n  margin: 0 0.5em;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">🤔 This is a design problem</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r2R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r2R3:0" tabindex="0" data-rttab="true">HTML</li><li class="react-tabs__tab" role="tab" id="tab:r2R3:1" aria-selected="false" aria-disabled="false" aria-controls="panel:r2R3:1" data-rttab="true">CSS</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r2R3:0" aria-labelledby="tab:r2R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Both of these technically follow all the WCAG rules.
+
+  They're both bad design.
+--></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>You wouldn't do this:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>
+  Pay now
+  (your payment of $300 hasn't been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>So don't do it with the accessible name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Pay now (your payment of $300 hasn't been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Pay now
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    Your payment of $300 hasn't been submitted yet.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Both of these technically follow all the WCAG rules.
+
+  They&#x27;re both bad design.
+--&gt;
+
+&lt;h2&gt;You wouldn&#x27;t do this:&lt;/h2&gt;
+&lt;button&gt;
+  Pay now
+  (your payment of $300 hasn&#x27;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)
+&lt;/button&gt;
+
+&lt;h2&gt;So don&#x27;t do it with the accessible name:&lt;/h2&gt;
+&lt;button
+  aria-label=&quot;Pay now (your payment of $300 hasn&#x27;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)&quot;&gt;
+  Pay now
+&lt;/button&gt;
+&lt;small&gt;
+  &lt;p&gt;
+    Your payment of $300 hasn&#x27;t been submitted yet.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  &lt;/p&gt;
+&lt;/small&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r2R3:1" aria-labelledby="tab:r2R3:1"></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;🤔 This is a design problem&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+small {
+  text-align: center;
+  color: var(--secondary);
+}
+
+button {
+  margin: 0 0.5em;
+}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Both of these technically follow all the WCAG rules.
+
+  They&#x27;re both bad design.
+--&gt;
+
+&lt;h2&gt;You wouldn&#x27;t do this:&lt;/h2&gt;
+&lt;button&gt;
+  Pay now
+  (your payment of $300 hasn&#x27;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)
+&lt;/button&gt;
+
+&lt;h2&gt;So don&#x27;t do it with the accessible name:&lt;/h2&gt;
+&lt;button
+  aria-label=&quot;Pay now (your payment of $300 hasn&#x27;t been submitted yet; once you click this button we will bill your bank for the full amount within 7-10 business days)&quot;&gt;
+  Pay now
+&lt;/button&gt;
+&lt;small&gt;
+  &lt;p&gt;
+    Your payment of $300 hasn&#x27;t been submitted yet.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  &lt;/p&gt;
+&lt;/small&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r2R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r2R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="designing-good-accessible-names">Designing good accessible names</h2>
+<p>The guidelines at <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/">Providing Accessible Names and Descriptions</a> are a great start, but I would summarize them like this — an accessible name <strong>should</strong>:</p>
+<ul>
+<li><strong>Be very short</strong> (like 1–3 words)</li>
+<li><strong>Be clear</strong> (explain what the control does)</li>
+<li><strong>Be unique</strong> (can’t be confused with another control on the page)</li>
+</ul>
+<p>And, the one actual rule about content (WCAG 2.5.3), it <strong>must</strong>:</p>
+<ul>
+<li><strong>Contain any visible label</strong> (usually the visible label is <em>all</em> you need)</li>
+</ul>
+<p>These guidelines become clear when you begin by understanding <em>who</em> you’re designing for: accessible names are used mostly by ① screen reader users and ② voice control users. For example:</p>
+<ul>
+<li>
+<p>Since screen readers present a linear “view” of your UI (they only read one word at a time!), <strong>long names can be incredibly frustrating</strong>. Think of how irritating it is to call a customer support line (&quot;To contact the DinoPark billing department or the business administrator between 9AM and 5PM, please press 1…&quot;).</p>
+</li>
+<li>
+<p>Since voice control users interact by <em>literally</em> asking the computer to click certain buttons (e.g., by saying, &quot;double-click <strong>visit DinoPark</strong>&quot;), <strong>names that don’t match visible labels are confusing</strong>.</p>
+</li>
+</ul>
+<p>This explains other guidance like “put the most distinguishing and important words first” and “do not include the word ‘button’ in the name of a button”. It all stems from the <em>purpose</em> of an accessible name—<strong>clearly identifying controls to people who cannot see or use the whole screen at once</strong>. The rest follows.</p>
+<aside class="sidenote"><h2 id="personal-opinion-uniqueness">Personal opinion: uniqueness</h2><p>As an example of why this is a <em>design</em> problem — that may not have clear answers — I actually <em>disagree</em> slightly with the guidance that all controls need <strong>unique</strong> names. See <strong>Example: create contexts</strong> for an example.</p></aside>
+<h2 id="alternative-just-use-the-accessible-description">Alternative: just use the accessible description</h2>
+<p>Choosing good accessible names becomes simpler if you understand the <em>alternatives</em> to setting long ones.</p>
+<p>Simply put: <strong>just use other properties</strong>—like the <strong>accessible description</strong>.</p>
+<p>I often work with customers who want to ensure screen readers announce something: error messages, essential instructions, status, whatever. While you should be wary of trying to <em>force</em> specific announcements (see <a href="/posts/make-narrator-read">(Don’t) make Narrator read things</a>), using other properties is a <em>great</em> way to expose information to screen readers. It’s <a href="/posts/make-narrator-read#method-2-change-properties">method 2</a> in that article!</p>
+<p>Unlike the accessible name, properties like accessible description have very few strict requirements—<a href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels">they must be correct &amp; descriptive</a> if present, but their use is only <a href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html#:~:text=There%20may%20also,described%20in%20text.">“strongly encouraged”</a>, never required (WCAG 1.3.1). No, they’re designed to be flexible. In fact, although ARIA only has 1 descriptive property—<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby"><strong>accessible description</strong></a>—UIA on Windows has <em>several</em> properties you can use, from <a href="https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids#:~:text=UIA_FullDescriptionPropertyId">descriptions</a> to <a href="https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids#:~:text=UIA_HelpTextPropertyId">help text</a> to <a href="https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids#:~:text=UIA_ItemStatusPropertyId">status</a>. And macOS &amp; iOS support <a href="https://developer.apple.com/documentation/accessibility/customized-accessibility-content">literally any key-value pairs</a>. No matter what you use, though, separating your <em>names</em> from your <em>descriptions</em> gives ATs flexibility — descriptions will still be read by default, but your users can change their order, read them separately, or even skip them altogether in familiar UI.</p>
+<p>This flexibility makes choosing names much easier: <strong>put visible labels in the accessible name</strong>—<strong>put everything else in the description</strong>.</p>
+<h2 id="examples">Examples</h2>
+<p>Let’s work through some examples.</p>
+<aside class="sidenote"><h3 id="note-this-guidance-applies-everywhere">Note: this guidance applies everywhere</h3><p>While these examples are written in HTML, these principles apply everywhere. On every ecosystem, in every framework. The syntax may be different &amp; the APIs you use will change. But these concepts are universal: no matter what OS you use, accessibility happens with an accessibility tree.</p><p>Good names are the same everywhere.</p></aside>
+<h2 id="example-accessible-names-for-images-emoji-and-icons">Example: accessible names for images, emoji, and icons</h2>
+<p>Let’s start by fixing our initial example.</p>
+<p>The emoji icon is clearly illustrative, so the emoji’s title (&quot;sauropod&quot;) is probably not a great name. The button has a text description below to help visual users (your buttons <a href="https://www.nngroup.com/articles/icon-usability/#:~:text=text%20label%20must%20be%20present%20alongside%20an%20icon"><em>do</em> have a text label</a> or a tooltip, right?), but it’s a bit wordy. Since the button already has a succinct tooltip (from its <code>title</code>), let’s use that as the name, and the wordier text as the description:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z65dCL" prefix="r3" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ A well-chosen name for our initial example&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Name this button \&quot;Visit DinoPark\&quot;, and use the subtitle as the description.\r\n\r\n  The emoji here is simply an illustration of the button&#39;s purpose, so the default name \&quot;suaropod\&quot; is not helpful. Icon buttons should have text description or a *tooltip*, which is what we use.\r\n--&gt;\r\n&lt;button\r\n  title=\&quot;Visit DinoPark\&quot;\r\n  aria-label=\&quot;Visit DinoPark\&quot;\r\n  aria-describedby=\&quot;subtitle\&quot;&gt;\r\n    🦕\r\n&lt;/button&gt;\r\n\r\n&lt;!-- (You could hide this element from screen-readers, but it&#39;s not important) --&gt;\r\n&lt;small id=\&quot;subtitle\&quot;&gt;Start your DinoPark visit today&lt;/small&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ A well-chosen name for our initial example</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r3R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r3R3:0" tabindex="0" data-rttab="true">HTML</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r3R3:0" aria-labelledby="tab:r3R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Name this button "Visit DinoPark", and use the subtitle as the description.
+
+  The emoji here is simply an illustration of the button's purpose, so the default name "suaropod" is not helpful. Icon buttons should have text description or a *tooltip*, which is what we use.
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Visit DinoPark<span class="token punctuation">"</span></span>
+  <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Visit DinoPark<span class="token punctuation">"</span></span>
+  <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    🦕
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- (You could hide this element from screen-readers, but it's not important) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Start your DinoPark visit today<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Name this button &quot;Visit DinoPark&quot;, and use the subtitle as the description.
+
+  The emoji here is simply an illustration of the button&#x27;s purpose, so the default name &quot;suaropod&quot; is not helpful. Icon buttons should have text description or a *tooltip*, which is what we use.
+--&gt;
+&lt;button
+  title=&quot;Visit DinoPark&quot;
+  aria-label=&quot;Visit DinoPark&quot;
+  aria-describedby=&quot;subtitle&quot;&gt;
+    🦕
+&lt;/button&gt;
+
+&lt;!-- (You could hide this element from screen-readers, but it&#x27;s not important) --&gt;
+&lt;small id=&quot;subtitle&quot;&gt;Start your DinoPark visit today&lt;/small&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ A well-chosen name for our initial example&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Name this button &quot;Visit DinoPark&quot;, and use the subtitle as the description.
+
+  The emoji here is simply an illustration of the button&#x27;s purpose, so the default name &quot;suaropod&quot; is not helpful. Icon buttons should have text description or a *tooltip*, which is what we use.
+--&gt;
+&lt;button
+  title=&quot;Visit DinoPark&quot;
+  aria-label=&quot;Visit DinoPark&quot;
+  aria-describedby=&quot;subtitle&quot;&gt;
+    🦕
+&lt;/button&gt;
+
+&lt;!-- (You could hide this element from screen-readers, but it&#x27;s not important) --&gt;
+&lt;small id=&quot;subtitle&quot;&gt;Start your DinoPark visit today&lt;/small&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r3R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r3R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<p>As a counterpoint, here we <em>remove</em> redundant emojis from the accessible name (since the rest of the label sufficiently describes the control):</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="1nedH9" prefix="r4" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ Hidden emojis, icons, and images&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Use the visible label text.\r\n\r\n  Both buttons limit their label to visible *text*, since the emoji is redundant &amp; unnecessary. The first simply overrides the button&#39;s name, while the second one hides the emoji from the automatic name calculation.\r\n\r\n  Both methods are fine (and honestly, keeping the emoji in the name isn&#39;t a big deal, either).\r\n--&gt;\r\n&lt;button aria-label=\&quot;New waiver\&quot;&gt;\r\n  ➕ New waiver\r\n&lt;/button&gt;\r\n&lt;button&gt;\r\n  &lt;span aria-hidden=\&quot;true\&quot;&gt;✏️&lt;/span&gt;\r\n  Edit existing waivers\r\n&lt;/button&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ Hidden emojis, icons, and images</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r4R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r4R3:0" tabindex="0" data-rttab="true">HTML</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r4R3:0" aria-labelledby="tab:r4R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Use the visible label text.
+
+  Both buttons limit their label to visible *text*, since the emoji is redundant &amp; unnecessary. The first simply overrides the button's name, while the second one hides the emoji from the automatic name calculation.
+
+  Both methods are fine (and honestly, keeping the emoji in the name isn't a big deal, either).
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>New waiver<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ➕ New waiver
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>✏️<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  Edit existing waivers
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Use the visible label text.
+
+  Both buttons limit their label to visible *text*, since the emoji is redundant &amp; unnecessary. The first simply overrides the button&#x27;s name, while the second one hides the emoji from the automatic name calculation.
+
+  Both methods are fine (and honestly, keeping the emoji in the name isn&#x27;t a big deal, either).
+--&gt;
+&lt;button aria-label=&quot;New waiver&quot;&gt;
+  ➕ New waiver
+&lt;/button&gt;
+&lt;button&gt;
+  &lt;span aria-hidden=&quot;true&quot;&gt;✏️&lt;/span&gt;
+  Edit existing waivers
+&lt;/button&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ Hidden emojis, icons, and images&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Use the visible label text.
+
+  Both buttons limit their label to visible *text*, since the emoji is redundant &amp; unnecessary. The first simply overrides the button&#x27;s name, while the second one hides the emoji from the automatic name calculation.
+
+  Both methods are fine (and honestly, keeping the emoji in the name isn&#x27;t a big deal, either).
+--&gt;
+&lt;button aria-label=&quot;New waiver&quot;&gt;
+  ➕ New waiver
+&lt;/button&gt;
+&lt;button&gt;
+  &lt;span aria-hidden=&quot;true&quot;&gt;✏️&lt;/span&gt;
+  Edit existing waivers
+&lt;/button&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r4R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r4R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="example-use-accessible-description-instead">Example: use accessible description instead</h2>
+<p>Let’s fix the “Pay now” example from earlier.</p>
+<p>It was worth distinguishing visually, so distinguish it for AT users, too. Use an <strong>accessible description</strong> instead of making the accessible name absurdly long:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="FWFqG" prefix="r5" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ Use description instead&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Use the default name! Add the additional information to the accessible description instead.\r\n\r\n  This subtle change makes it much easier to use: screen reader users will hear the short name first, and the description later---and it&#39;s easy for them to silence without worrying about lost information.\r\n\r\n--&gt;\r\n&lt;button aria-describedby=\&quot;description\&quot;&gt;\r\n  Pay now\r\n&lt;/button&gt;\r\n&lt;small id=\&quot;description\&quot;&gt;\r\n  &lt;p&gt;\r\n    Your payment of $300 hasn&#39;t been submitted yet.\r\n  &lt;/p&gt;\r\n  &lt;p&gt;\r\n    Once you click this button we will bill your bank for the full amount within 7-10 business days.\r\n  &lt;/p&gt;\r\n&lt;/small&gt;&quot;],&quot;css&quot;:[0,&quot;h2 {\r\n  font-size: 1.2em;\r\n  text-align: center;\r\n}\r\n\r\nsmall {\r\n  text-align: center;\r\n  color: var(--secondary);\r\n}\r\n\r\nbutton {\r\n  margin: 0 0.5em;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ Use description instead</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r5R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r5R3:0" tabindex="0" data-rttab="true">HTML</li><li class="react-tabs__tab" role="tab" id="tab:r5R3:1" aria-selected="false" aria-disabled="false" aria-controls="panel:r5R3:1" data-rttab="true">CSS</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r5R3:0" aria-labelledby="tab:r5R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Use the default name! Add the additional information to the accessible description instead.
+
+  This subtle change makes it much easier to use: screen reader users will hear the short name first, and the description later---and it's easy for them to silence without worrying about lost information.
+
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Pay now
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    Your payment of $300 hasn't been submitted yet.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Use the default name! Add the additional information to the accessible description instead.
+
+  This subtle change makes it much easier to use: screen reader users will hear the short name first, and the description later---and it&#x27;s easy for them to silence without worrying about lost information.
+
+--&gt;
+&lt;button aria-describedby=&quot;description&quot;&gt;
+  Pay now
+&lt;/button&gt;
+&lt;small id=&quot;description&quot;&gt;
+  &lt;p&gt;
+    Your payment of $300 hasn&#x27;t been submitted yet.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  &lt;/p&gt;
+&lt;/small&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r5R3:1" aria-labelledby="tab:r5R3:1"></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ Use description instead&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+small {
+  text-align: center;
+  color: var(--secondary);
+}
+
+button {
+  margin: 0 0.5em;
+}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Use the default name! Add the additional information to the accessible description instead.
+
+  This subtle change makes it much easier to use: screen reader users will hear the short name first, and the description later---and it&#x27;s easy for them to silence without worrying about lost information.
+
+--&gt;
+&lt;button aria-describedby=&quot;description&quot;&gt;
+  Pay now
+&lt;/button&gt;
+&lt;small id=&quot;description&quot;&gt;
+  &lt;p&gt;
+    Your payment of $300 hasn&#x27;t been submitted yet.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Once you click this button we will bill your bank for the full amount within 7-10 business days.
+  &lt;/p&gt;
+&lt;/small&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r5R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r5R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<aside class="sidenote"><h3 id="is-it-subtle">Is it subtle?</h3><p>This may seem like a subtle change to screen reader output; from:</p><blockquote>
+<p>Pay now <strong>{other stuff}</strong>, button</p>
+</blockquote><p>To:</p><blockquote>
+<p>Pay now, button, <strong>{other stuff}</strong></p>
+</blockquote><p>But that change is actually huge:</p><ol>
+<li>
+<p><strong>It’s faster.</strong> Screen reader users rely on the control type (&quot;button&quot;) to understand what actions they can take. Moving the <em>other stuff</em> later gives screen readers this key information sooner.</p>
+</li>
+<li>
+<p><strong>It’s configurable</strong>. Since the description is now in a separate property, screen readers can handle it differently. They can delay announcing it or hide it altogether &amp; read it only on-demand.</p>
+</li>
+</ol></aside>
+<h2 id="example-go-beyond-the-visible-label">Example: go beyond the visible label</h2>
+<p>Here’s a rare example where the visible label isn’t clear enough to distinguish the controls.</p>
+<p>In fact, the design relies on layout cues that would be very hard to understand in a screen reader. You <em>could</em> add extra text to the <strong>accessible description</strong>, like above, but since this text is vital to disambiguate the buttons, it makes sense to modify the name. Besides, the small note about the T-Rex tour is a better use of the accessible description.</p>
+<p>Notably, I made a <em>design</em> decision to put the verb <em>last</em> in the accessible name (&quot;Stegosaurus tour <strong>register</strong>&quot;). Since all the buttons have the same verb, I use the <em>tour name</em> first — to lead with the most-selective words first so scanning is easier. It’s probably not necessary here (and also a bit controversial: WCAG 2.5.3 recommends putting visible label text at the start of the name), but worth a demonstration:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Npbpu" prefix="r6" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ Handling unclear labels&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Explicit labels for the Register buttons!\r\n\r\n  With identical visible labels, these buttons rely on visual layout cues to be useful. So they need extra content to be useful to screen reader users.\r\n--&gt;\r\n&lt;ul&gt;\r\n  &lt;li&gt;\r\n    &lt;!--\r\n      Note the most-selective text is first. All buttons say \&quot;Register\&quot;, so lead with the most specific information.\r\n    --&gt;\r\n    &lt;button aria-label=\&quot;Stegosaurus tour register\&quot;&gt;\r\n      Register\r\n    &lt;/button&gt;\r\n    Stegosaurus tour\r\n  &lt;/li&gt;\r\n\r\n  &lt;li&gt;\r\n    &lt;button aria-label=\&quot;Raptor feeding behind-the-scenes register\&quot;&gt;Register&lt;/button&gt;\r\n    Raptor feeding behind-the-scenes\r\n  &lt;/li&gt;\r\n\r\n  &lt;li&gt;\r\n    &lt;!-- Look, accessible description! --&gt;\r\n    &lt;button\r\n      aria-label=\&quot;T-Rex tour register\&quot;\r\n      aria-describedby=\&quot;caveat\&quot;&gt;Register&lt;/button&gt;\r\n    T-Rex tour\r\n    &lt;small id=\&quot;caveat\&quot;&gt;\r\n      (not safe for mathematicians)\r\n    &lt;/small&gt;\r\n  &lt;/li&gt;\r\n&lt;/ul&gt;&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ Handling unclear labels</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r6R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r6R3:0" tabindex="0" data-rttab="true">HTML</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r6R3:0" aria-labelledby="tab:r6R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Explicit labels for the Register buttons!
+
+  With identical visible labels, these buttons rely on visual layout cues to be useful. So they need extra content to be useful to screen reader users.
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--
+      Note the most-selective text is first. All buttons say "Register", so lead with the most specific information.
+    --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Stegosaurus tour register<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Register
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    Stegosaurus tour
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Raptor feeding behind-the-scenes register<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Register<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    Raptor feeding behind-the-scenes
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Look, accessible description! --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+      <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>T-Rex tour register<span class="token punctuation">"</span></span>
+      <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>caveat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Register<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    T-Rex tour
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>caveat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      (not safe for mathematicians)
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Explicit labels for the Register buttons!
+
+  With identical visible labels, these buttons rely on visual layout cues to be useful. So they need extra content to be useful to screen reader users.
+--&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;!--
+      Note the most-selective text is first. All buttons say &quot;Register&quot;, so lead with the most specific information.
+    --&gt;
+    &lt;button aria-label=&quot;Stegosaurus tour register&quot;&gt;
+      Register
+    &lt;/button&gt;
+    Stegosaurus tour
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;button aria-label=&quot;Raptor feeding behind-the-scenes register&quot;&gt;Register&lt;/button&gt;
+    Raptor feeding behind-the-scenes
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;!-- Look, accessible description! --&gt;
+    &lt;button
+      aria-label=&quot;T-Rex tour register&quot;
+      aria-describedby=&quot;caveat&quot;&gt;Register&lt;/button&gt;
+    T-Rex tour
+    &lt;small id=&quot;caveat&quot;&gt;
+      (not safe for mathematicians)
+    &lt;/small&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ Handling unclear labels&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Explicit labels for the Register buttons!
+
+  With identical visible labels, these buttons rely on visual layout cues to be useful. So they need extra content to be useful to screen reader users.
+--&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;!--
+      Note the most-selective text is first. All buttons say &quot;Register&quot;, so lead with the most specific information.
+    --&gt;
+    &lt;button aria-label=&quot;Stegosaurus tour register&quot;&gt;
+      Register
+    &lt;/button&gt;
+    Stegosaurus tour
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;button aria-label=&quot;Raptor feeding behind-the-scenes register&quot;&gt;Register&lt;/button&gt;
+    Raptor feeding behind-the-scenes
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;!-- Look, accessible description! --&gt;
+    &lt;button
+      aria-label=&quot;T-Rex tour register&quot;
+      aria-describedby=&quot;caveat&quot;&gt;Register&lt;/button&gt;
+    T-Rex tour
+    &lt;small id=&quot;caveat&quot;&gt;
+      (not safe for mathematicians)
+    &lt;/small&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r6R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r6R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="example-create-contexts">Example: create contexts</h2>
+<p>Here’s another example that emphasizes the <em>design</em> aspect of choosing names.</p>
+<p>The controls in the DinoPark control panel below all have similar <em>visible</em> labels, but different <em>effects</em>. For example, we have ① a button to “Open” the escape tunnel to the helipad and ② a similar one to “Open” the tunnel to the raptor enclosure. The visible labels alone are ambiguous to screen reader users — when tabbing between them, they’ll simply hear <code>Open, button</code>. Dangerous.</p>
+<p>The WCAG naming guidelines above recommend choosing <strong>unique names</strong> for each: <code>Open helipad tunnel</code> &amp; <code>Open raptor cages tunnel</code>.</p>
+<p>But I, however, prefer <strong>contexts</strong>—if you name their <em>containers</em> “Tunnel to helipad” &amp; “Tunnel to raptor cages”, you create <em>contexts</em> that screen readers will announce automatically when entered. This makes the screen reader experience <em>a lot</em> clearer in more-complicated interfaces: for example, the tunnel to the hotel can be opened <em>and</em> sealed permanently, and unique names would make things much wordier (<code>Seal permanently, tunnel to hotel</code>?).</p>
+<p>This approach is often simpler, but it’s a trade-off: what will happen when a voice control user says &quot;Click <strong>Open</strong>&quot;?</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z1PXvUi" prefix="r7" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;✅ Create contexts&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;!--\r\n  Name each section to create contexts!\r\n\r\n  These sections are apparent to visual users, but not to screen reader users.\r\n  By naming them, we create contexts that screen reader users will hear upon\r\n  entering each section.\r\n--&gt;\r\n&lt;h2&gt;DinoPark escape tunnels&lt;/h2&gt;\r\n\r\n&lt;!--\r\n  Changing the button&#39;s name would also be sufficient for these first 2\r\n  sections, but it gets sketchy when there are multiple buttons per section.\r\n  Naming the sections leads to more elegant readout.\r\n--&gt;\r\n&lt;section aria-labelledby=\&quot;tunnel-to-helipad\&quot;&gt;\r\n  &lt;h3 id=\&quot;tunnel-to-helipad\&quot;&gt;Tunnel to helipad&lt;/h3&gt;\r\n  &lt;button&gt;Open&lt;/button&gt;\r\n&lt;/section&gt;\r\n\r\n&lt;section aria-labelledby=\&quot;tunnel-to-raptors\&quot;&gt;\r\n  &lt;h3 id=\&quot;tunnel-to-raptors\&quot;&gt;Tunnel to raptor cages&lt;/h3&gt;\r\n  &lt;button&gt;Open&lt;/button&gt;\r\n&lt;/section&gt;\r\n\r\n&lt;section aria-labelledby=\&quot;tunnel-to-hotel\&quot;&gt;\r\n  &lt;h3 id=\&quot;tunnel-to-hotel\&quot;&gt;Tunnel to hotel&lt;/h3&gt;\r\n  &lt;button&gt;Open&lt;/button&gt;\r\n  &lt;button&gt;Seal permanently&lt;/button&gt;\r\n&lt;/section&gt;\r\n\r\n&lt;section aria-labelledby=\&quot;tunnel-to-even-scarier-raptors\&quot;&gt;\r\n  &lt;h3 id=\&quot;tunnel-to-even-scarier-raptors\&quot;&gt;Tunnel to EVEN SCARIER raptors&lt;/h3&gt;\r\n  &lt;button&gt;Open&lt;/button&gt;\r\n  &lt;button&gt;Seal permanently&lt;/button&gt;\r\n&lt;/section&gt;&quot;],&quot;css&quot;:[0,&quot;h2, h3 {\r\n  font-size: 1.2rem;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n  h2 {\r\n    font-size: 1.4rem;\r\n  }\r\n\r\nsection {\r\n  margin: 0;\r\n  padding: 1rem;\r\n  width: 100%;\r\n}&quot;],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">✅ Create contexts</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r7R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r7R3:0" tabindex="0" data-rttab="true">HTML</li><li class="react-tabs__tab" role="tab" id="tab:r7R3:1" aria-selected="false" aria-disabled="false" aria-controls="panel:r7R3:1" data-rttab="true">CSS</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r7R3:0" aria-labelledby="tab:r7R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token comment">&lt;!--
+  Name each section to create contexts!
+
+  These sections are apparent to visual users, but not to screen reader users.
+  By naming them, we create contexts that screen reader users will hear upon
+  entering each section.
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>DinoPark escape tunnels<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--
+  Changing the button's name would also be sufficient for these first 2
+  sections, but it gets sketchy when there are multiple buttons per section.
+  Naming the sections leads to more elegant readout.
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-helipad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-helipad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tunnel to helipad<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Open<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-raptors<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-raptors<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tunnel to raptor cages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Open<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-hotel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-hotel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tunnel to hotel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Open<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Seal permanently<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-even-scarier-raptors<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tunnel-to-even-scarier-raptors<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tunnel to EVEN SCARIER raptors<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Open<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Seal permanently<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;!--
+  Name each section to create contexts!
+
+  These sections are apparent to visual users, but not to screen reader users.
+  By naming them, we create contexts that screen reader users will hear upon
+  entering each section.
+--&gt;
+&lt;h2&gt;DinoPark escape tunnels&lt;/h2&gt;
+
+&lt;!--
+  Changing the button&#x27;s name would also be sufficient for these first 2
+  sections, but it gets sketchy when there are multiple buttons per section.
+  Naming the sections leads to more elegant readout.
+--&gt;
+&lt;section aria-labelledby=&quot;tunnel-to-helipad&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-helipad&quot;&gt;Tunnel to helipad&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-raptors&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-raptors&quot;&gt;Tunnel to raptor cages&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-hotel&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-hotel&quot;&gt;Tunnel to hotel&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+  &lt;button&gt;Seal permanently&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-even-scarier-raptors&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-even-scarier-raptors&quot;&gt;Tunnel to EVEN SCARIER raptors&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+  &lt;button&gt;Seal permanently&lt;/button&gt;
+&lt;/section&gt;</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div><div class="react-tabs__tab-panel" role="tabpanel" id="panel:r7R3:1" aria-labelledby="tab:r7R3:1"></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;✅ Create contexts&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;h2, h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+section {
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--
+  Name each section to create contexts!
+
+  These sections are apparent to visual users, but not to screen reader users.
+  By naming them, we create contexts that screen reader users will hear upon
+  entering each section.
+--&gt;
+&lt;h2&gt;DinoPark escape tunnels&lt;/h2&gt;
+
+&lt;!--
+  Changing the button&#x27;s name would also be sufficient for these first 2
+  sections, but it gets sketchy when there are multiple buttons per section.
+  Naming the sections leads to more elegant readout.
+--&gt;
+&lt;section aria-labelledby=&quot;tunnel-to-helipad&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-helipad&quot;&gt;Tunnel to helipad&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-raptors&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-raptors&quot;&gt;Tunnel to raptor cages&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-hotel&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-hotel&quot;&gt;Tunnel to hotel&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+  &lt;button&gt;Seal permanently&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;section aria-labelledby=&quot;tunnel-to-even-scarier-raptors&quot;&gt;
+  &lt;h3 id=&quot;tunnel-to-even-scarier-raptors&quot;&gt;Tunnel to EVEN SCARIER raptors&lt;/h3&gt;
+  &lt;button&gt;Open&lt;/button&gt;
+  &lt;button&gt;Seal permanently&lt;/button&gt;
+&lt;/section&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r7R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r7R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<h2 id="example-bad-names">Example: bad names</h2>
+<p>And finally, let’s show some common mistakes:</p>
+<div class="wrapper" data-astro-cid-tb5vpudz> <astro-island uid="Z1cAIAi" prefix="r8" component-url="/_astro/Playground.CeP6R2Ji.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;title&quot;:[0,&quot;❌ Bad names&quot;],&quot;initialSnippet&quot;:[0,{&quot;markup&quot;:[0,&quot;&lt;h2&gt;These are bad&lt;/h2&gt;\r\n\r\n&lt;!--\r\n  BAD: don&#39;t specify a name that&#39;s identical to the default. None is needed here.\r\n--&gt;\r\n&lt;button aria-label=\&quot;Show map\&quot;&gt;\r\n  Show map\r\n&lt;/button&gt;\r\n\r\n&lt;!--\r\n  BAD: must contain the visible label + should communicate the button&#39;s function.\r\n--&gt;\r\n &lt;button aria-label=\&quot;Helicopter tours are great!\&quot;&gt;\r\n  Book helicopter\r\n &lt;/button&gt;\r\n\r\n &lt;p&gt;\r\n   Helicopter 6:\r\n\r\n   &lt;!--\r\n     BAD: should not contain control info (\&quot;button\&quot;).\r\n   --&gt;\r\n   &lt;button aria-label=\&quot;Track helicopter 6 button\&quot;&gt;\r\n    Track\r\n   &lt;/button&gt;\r\n\r\n  &lt;!--\r\n    BAD: should not contain descriptive text, especially text that&#39;s never shown to visible users.\r\n  --&gt;\r\n   &lt;button aria-label=\&quot;Call helicopter 6, note that this can take a while\&quot;&gt;\r\n    Call\r\n   &lt;/button&gt;\r\n &lt;/p&gt;\r\n&quot;],&quot;css&quot;:[0],&quot;hiddenCss&quot;:[0,&quot;:root {\r\n    /* Always dark */\r\n    --foreground: #ddd;\r\n    --background: rgb(30, 30, 30);\r\n    --link: #2563EB;\r\n    --secondary: #aaa;\r\n}\r\n\r\nhtml, body {\r\n    font-family: Avenir, &#39;Avenir Next LT Pro&#39;, Montserrat, Corbel, &#39;URW Gothic&#39;, source-sans-pro, sans-serif;\r\n    font-size: 1.1rem;\r\n    line-height: 1.5;\r\n\r\n    color: var(--foreground);\r\n    background: var(--background);\r\n\r\n    height: 100%;\r\n    margin: 0;\r\n}\r\n\r\n@media print {\r\n    html, body {\r\n        font-size: 10pt;\r\n        line-height: 1.5;\r\n    }\r\n}\r\n\r\nbody {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 0.2rem;\r\n\r\n    /* center */\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\np {\r\n    margin: 0;\r\n}\r\n\r\n*, *:before, *:after {\r\n    box-sizing: border-box;\r\n}\r\n\r\ninput,\r\nbutton {\r\n    font-size: inherit;\r\n\r\n    background-color: var(--background);\r\n    color: var(--foreground);\r\n\r\n    border: 1px solid var(--secondary);\r\n    border-radius: 0.2em;\r\n    padding: 0.2em 0.4em;\r\n}\r\n\r\ninput:focus:not([type=\&quot;button\&quot;]):not([type=\&quot;submit\&quot;]),\r\ninput:hover,\r\nbutton:hover {\r\n    outline: none;\r\n    border-color: var(--foreground);\r\n    background-color: var(--foreground);\r\n    color: var(--background);\r\n}\r\n\r\n/* Use default focus rect */\r\n/* button:focus,\r\ninput[type=\&quot;button\&quot;]:focus,\r\ninput[type=\&quot;submit\&quot;]:focus {\r\n} */\r\n\r\nbutton:active,\r\ninput[type=\&quot;button\&quot;]:active,\r\ninput[type=\&quot;submit\&quot;]:active {\r\n    border-color: var(--secondary);\r\n    background-color: var(--secondary);\r\n    color: var(--background);\r\n}\r\n\r\nbutton,\r\ninput[type=\&quot;button\&quot;],\r\ninput[type=\&quot;submit\&quot;] {\r\n    cursor: pointer;\r\n}&quot;],&quot;javascript&quot;:[0]}],&quot;transformJs&quot;:[0,false],&quot;defaultTab&quot;:[0,&quot;markup&quot;],&quot;data-astro-cid-tb5vpudz&quot;:[0,true]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Playground&quot;,&quot;value&quot;:true}" await-children><figure class="_playground_7r2v3_1"><div class="_editorTabs_7r2v3_18" data-rttabs="true"><div class="_tabsSection_7r2v3_30"><figcaption class="_title_7r2v3_37">❌ Bad names</figcaption><ul class="react-tabs__tab-list" role="tablist"><li class="react-tabs__tab react-tabs__tab--selected" role="tab" id="tab:r8R3:0" aria-selected="true" aria-disabled="false" aria-controls="panel:r8R3:0" tabindex="0" data-rttab="true">HTML</li></ul></div><div class="react-tabs__tab-panel react-tabs__tab-panel--selected" role="tabpanel" id="panel:r8R3:0" aria-labelledby="tab:r8R3:0"><div class="_editor_7r2v3_18" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden"><pre class="language-html" aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>These are bad<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--
+  BAD: don't specify a name that's identical to the default. None is needed here.
+--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Show map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Show map
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--
+  BAD: must contain the visible label + should communicate the button's function.
+--></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Helicopter tours are great!<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  Book helicopter
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+   Helicopter 6:
+
+   <span class="token comment">&lt;!--
+     BAD: should not contain control info ("button").
+   --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Track helicopter 6 button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Track
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+  <span class="token comment">&lt;!--
+    BAD: should not contain descriptive text, especially text that's never shown to visible users.
+  --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Call helicopter 6, note that this can take a while<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Call
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<br /></pre><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:0.5rem;padding-right:0.5rem;padding-bottom:0.5rem;padding-left:0.5rem" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;h2&gt;These are bad&lt;/h2&gt;
+
+&lt;!--
+  BAD: don&#x27;t specify a name that&#x27;s identical to the default. None is needed here.
+--&gt;
+&lt;button aria-label=&quot;Show map&quot;&gt;
+  Show map
+&lt;/button&gt;
+
+&lt;!--
+  BAD: must contain the visible label + should communicate the button&#x27;s function.
+--&gt;
+ &lt;button aria-label=&quot;Helicopter tours are great!&quot;&gt;
+  Book helicopter
+ &lt;/button&gt;
+
+ &lt;p&gt;
+   Helicopter 6:
+
+   &lt;!--
+     BAD: should not contain control info (&quot;button&quot;).
+   --&gt;
+   &lt;button aria-label=&quot;Track helicopter 6 button&quot;&gt;
+    Track
+   &lt;/button&gt;
+
+  &lt;!--
+    BAD: should not contain descriptive text, especially text that&#x27;s never shown to visible users.
+  --&gt;
+   &lt;button aria-label=&quot;Call helicopter 6, note that this can take a while&quot;&gt;
+    Call
+   &lt;/button&gt;
+ &lt;/p&gt;
+</textarea><style>
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div></div><div class="_frame_7r2v3_19"><iframe class="_iframe_7r2v3_57" height="100%" width="100%" title="example" frameBorder="0" srcDoc="
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;/&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;/&gt;
+      &lt;title&gt;❌ Bad names&lt;/title&gt;
+      &lt;style&gt;:root {
+    /* Always dark */
+    --foreground: #ddd;
+    --background: rgb(30, 30, 30);
+    --link: #2563EB;
+    --secondary: #aaa;
+}
+
+html, body {
+    font-family: Avenir, &#x27;Avenir Next LT Pro&#x27;, Montserrat, Corbel, &#x27;URW Gothic&#x27;, source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    color: var(--foreground);
+    background: var(--background);
+
+    height: 100%;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-size: inherit;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus:not([type=&quot;button&quot;]):not([type=&quot;submit&quot;]),
+input:hover,
+button:hover {
+    outline: none;
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Use default focus rect */
+/* button:focus,
+input[type=&quot;button&quot;]:focus,
+input[type=&quot;submit&quot;]:focus {
+} */
+
+button:active,
+input[type=&quot;button&quot;]:active,
+input[type=&quot;submit&quot;]:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--background);
+}
+
+button,
+input[type=&quot;button&quot;],
+input[type=&quot;submit&quot;] {
+    cursor: pointer;
+}&lt;/style&gt;
+      &lt;style&gt;undefined&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h2&gt;These are bad&lt;/h2&gt;
+
+&lt;!--
+  BAD: don&#x27;t specify a name that&#x27;s identical to the default. None is needed here.
+--&gt;
+&lt;button aria-label=&quot;Show map&quot;&gt;
+  Show map
+&lt;/button&gt;
+
+&lt;!--
+  BAD: must contain the visible label + should communicate the button&#x27;s function.
+--&gt;
+ &lt;button aria-label=&quot;Helicopter tours are great!&quot;&gt;
+  Book helicopter
+ &lt;/button&gt;
+
+ &lt;p&gt;
+   Helicopter 6:
+
+   &lt;!--
+     BAD: should not contain control info (&quot;button&quot;).
+   --&gt;
+   &lt;button aria-label=&quot;Track helicopter 6 button&quot;&gt;
+    Track
+   &lt;/button&gt;
+
+  &lt;!--
+    BAD: should not contain descriptive text, especially text that&#x27;s never shown to visible users.
+  --&gt;
+   &lt;button aria-label=&quot;Call helicopter 6, note that this can take a while&quot;&gt;
+    Call
+   &lt;/button&gt;
+ &lt;/p&gt;
+
+      &lt;span&gt;&lt;/span&gt;
+      &lt;script&gt;
+        var _privateLog = console.log;
+        console.log = function(...rest) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r8R0:&quot;,
+              message: {
+                type: &quot;log&quot;,
+                data: rest
+              },
+            }, &quot;*&quot;);
+          }
+          _privateLog.apply(console, arguments);
+        }
+        window.onerror = function(message) {
+          if(typeof window !== &#x27;undefined&#x27;) {
+            window.parent.postMessage({
+              source: &quot;frame-:r8R0:&quot;,
+              message: {
+                type: &quot;error&quot;,
+                data: message
+              },
+            }, &quot;*&quot;);
+          }
+        }
+      &lt;/script&gt;
+      &lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+      
+        &lt;script&gt;
+          undefined
+        &lt;/script&gt;
+      
+    &lt;/body&gt;
+    &lt;/html&gt;
+  " loading="lazy"></iframe></div></figure><!--astro:end--></astro-island> </div>
+<p>Hopefully it makes sense why these are mistakes: they hide critical information, add too much text, or otherwise make the UI more annoying to use.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In short, for <strong>accessible names</strong>:</p>
+<ul>
+<li><strong>Rely on the defaults</strong> when you can</li>
+</ul>
+<p>And if you can’t, keep those names:</p>
+<ul>
+<li><strong>Short</strong></li>
+<li><strong>Clear</strong></li>
+<li><strong>Unique</strong></li>
+</ul>
+<p>And make sure they contain any <strong>visible label</strong>. Put everything else somewhere else — like the <strong>accessible description</strong>.</p>
+<p>The first words in the ARIA guidance (<a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/">Read Me First</a>) are “No ARIA is better than Bad ARIA”. We want to make UI that’s accessible to everyone. But often that means doing nothing at all: your framework usually chooses good names automatically. Default accessible names can be confusing or difficult to use. But <em>incorrect</em>, custom accessible names can be <em>impossible</em> to use.</p>
+<p>I hope now it’s clear why.</p>
+<hr/>
+<p><em>Thanks to Atherai Maran for editing &amp; the dinosaur drawing. Thanks to Doug Geoffray for consulting. Tested with Narrator &amp; NVDA in Edge on Windows 11.</em></p>
+<hr/>
+<section class="appendix"><h2 id="further-reading">Further reading</h2><p>WCAG rules &amp; guidance:</p><ul>
+<li>
+<p>Intro to the guidelines: <a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/">Read Me First</a> (including &quot;No ARIA is better than Bad ARIA&quot;)</p>
+</li>
+<li>
+<p>All the rules: <a href="https://www.w3.org/TR/WCAG21">Web Content Accessibility Guidelines</a></p>
+<ul>
+<li>Understanding <a href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html">WCAG 4.1.2 - Name, Role, Value</a></li>
+<li>Understanding <a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3 - Label in Name</a></li>
+<li>Understanding <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html">WCAG 1.1.1 - Non-text content</a></li>
+<li>Understanding <a href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships">WCAG 1.3.1 - Info and Relationships</a></li>
+</ul>
+</li>
+<li>
+<p>Guidelines for writing good accessible names: <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/">Providing Accessible Names and Descriptions</a></p>
+</li>
+<li>
+<p>How the web calculates accessible names: <a href="https://www.w3.org/TR/accname">Accessible Name and Description Computation 1.1</a></p>
+</li>
+<li>
+<p>How browsers map ARIA to native accessibility APIs: <a href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings</a></p>
+</li>
+</ul><p>Related articles:</p><ul>
+<li>“Visible label” vs &quot;accessible name&quot;: <a href="https://webaim.org/articles/label-name">Decoding Label and Name for Accessibility</a></li>
+<li>Avoid ARIA when you can: <a href="https://www.tpgi.com/html5-accessibility-chops-just-use-a-button/">Just use a (native HTML) button</a></li>
+<li>More about accessible name &amp; description: <a href="https://tetralogical.com/blog/2023/04/05/accessible-names-and-descriptions/">Foundations: accessible names and descriptions</a></li>
+<li>My article about forcing announcements: <a href="/posts/make-narrator-read/">(Don’t) make Narrator read things</a></li>
+</ul></section>
+<section class="appendix"><h2 id="appendix-about-the-article-title">Appendix: About the article title</h2><p>I remember reading an article with this title eons ago, but I haven’t been able to find it since. So I decided to write my own 😅. Can you find it? I’d love to link it.</p></section> </article> <hr data-astro-cid-egg7nqdx> <aside data-astro-cid-egg7nqdx> <nav class="bottom_nav" data-astro-cid-egg7nqdx> <a class="prev" href="/posts/resize_winui_window_part_2_resize/" data-astro-cid-egg7nqdx>&larr; Resize a window in WinUI (part 2: resize the window)</a>  </nav> <span class="print-only" data-astro-cid-egg7nqdx> <a href="https://ben.stolovitz.com/" data-astro-cid-egg7nqdx>ben.stolovitz.com</a> //
+</span> 
+Published
+<time datetime="2025-08-17T00:00:00.000Z" data-astro-cid-egg7nqdx> Aug 17, 2025 </time>   </aside> </main>   <menu data-astro-cid-egg7nqdx> <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><astro-island uid="yGADS" component-url="/_astro/ThemeButton.DLzJdG7X.js" component-export="default" renderer-url="/_astro/client.CSdlLnY0.js" props="{&quot;data-astro-cid-egg7nqdx&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}"></astro-island> </menu>  </body></html>
